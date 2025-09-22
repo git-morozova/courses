@@ -1585,7 +1585,7 @@ p {
   text-align: center;
   width: 90%;
   backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(1px);
   background-color: rgba(255, 255, 255, 0.5);
   height: 288px;
   display: flex;
