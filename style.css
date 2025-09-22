@@ -526,7 +526,9 @@ p {
   
   .project__top-right-container_left {
        text-align: center;
+    font-size: 20px;
   }
+  
 
 }
 
@@ -1730,6 +1732,13 @@ p {
     margin-right: 10px;
   }
 }
+
+@media screen and (max-width: 375px) {
+
+  .carousel__wrapper {
+    padding: 20px 10px 50px 10px;
+  }
+  }
 
 /* /КАРУСЕЛЬ ПРОСТАЯ */
 
