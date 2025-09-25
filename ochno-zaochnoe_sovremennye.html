@@ -1,86 +1,2994 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Список курсов</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Описание страницы">
+    <meta name="robots" content="noindex, nofollow"> <!-- УБРАТЬ ПОСЛЕ РЕЛИЗА -->
+    <meta name="viewport" content="width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <title>Test</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer=""></script>
 </head>
+
 <body>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <main>
+        <section id="home">
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #fafafa;
-            color: #333;
-            line-height: 1.6;
-            text-align: center;
-        }
 
-        h1 {
-            font-size: 2.5rem;
-            color: #3498db;
-            margin-bottom: 1.5rem;
-        }
 
-        p {
-            max-width: 600px;
-            margin: auto;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
 
-        ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
+            <style>
+                /* ОБЩИЕ */
+                html {
+                    scroll-behavior: smooth;
+                    font-family: 'Myriad Pro', sans-serif;
+                }
 
-        li a {
-            text-decoration: none;
-            color: #3498db;
-            transition: all 0.3s ease-in-out;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            background-color: transparent;
-            border: 2px solid #3498db;
-            display: block;
-        }
+                p {
+                    padding: 0;
+                    margin: 0;
+                }
 
-        li a:hover {
-            background-color: #3498db;
-            color: white;
-        }
+                .seminar {
+                    display: none;
+                }
 
-        footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 50px;
-            background-color: #3498db;
-            color: white;
-            text-align: center;
-            line-height: 50px;
-        }
+                .pointer {
+                    cursor: pointer;
+                }
 
-        @media screen and (max-width: 768px) {
-            ul {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+                .video-player {
+                    border-radius: 12px;
+                }
 
-    <h1>Список курсов</h1>
-    <ul>
-        <li><a href="/ochnoe_didaktika.html">Дидактика современной малой проктологии с отработкой практических навыков (очное)</a></li>
-        <li><a href="/ochno-zaochnoe_sovremennye.html">Современные подходы к диагностике и лечению пациентов с нейропатией лицевого нерва (очно-заочное)</a></li>
-        <li><a href="/zaochnoe_ozhirenie.html">Ожирение в клинической практике: переосмысление понятий (заочное)</a></li>
-    </ul>
+                .project__container {
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    transition: all 0.5s ease-in-out;
+                }
+
+                @media screen and (min-width: 1500px) {
+                    .project__container {
+                        zoom: 1.2;
+                    }
+                }
+
+                @media screen and (min-width: 1800px) {
+                    .project__container {
+                        zoom: 1.3;
+                    }
+                }
+
+                @media screen and (min-width: 2000px) {
+                    .project__container {
+                        zoom: 1.4;
+                    }
+                }
+
+                @media screen and (min-width: 2200px) {
+                    .project__container {
+                        zoom: 1.5;
+                    }
+                }
+
+                @media screen and (min-width: 2400px) {
+                    .project__container {
+                        zoom: 1.6;
+                    }
+                }
+
+                @media screen and (min-width: 2600px) {
+                    .project__container {
+                        zoom: 1.7;
+                    }
+                }
+
+                @media screen and (min-width: 2800px) {
+                    .project__container {
+                        zoom: 1.8;
+                    }
+                }
+
+                @media screen and (min-width: 3000px) {
+                    .project__container {
+                        zoom: 1.9;
+                    }
+                }
+
+                @media screen and (min-width: 3200px) {
+                    .project__container {
+                        zoom: 2;
+                    }
+                }
+
+                .project__show {
+                    position: absolute;
+                    bottom: -2px;
+                    height: 150px;
+                    width: 100%;
+                    background: linear-gradient(to bottom, rgb(255 255 255 / 0%), rgb(255 255 255));
+                    border: 0;
+                    cursor: pointer;
+                }
+
+                .project__show-img {
+                    min-width: 100px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 44%;
+                }
+
+                .project__hide {
+                    position: absolute;
+                    bottom: -50px;
+                    height: 50px;
+                    width: 100%;
+                    background: transparent;
+                    border: 0;
+                    cursor: pointer;
+                }
+
+                .project__hide-img {
+                    min-width: 100px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 44%;
+                }
+
+                .project__hidden {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 1s ease-out;
+                }
+
+                .project__visible {
+                    transition: max-height 1s ease-in;
+                }
+
+                @media screen and (max-width: 770px) {
+
+                    .project__show-img,
+                    .project__hide-img {
+                        left: 39%;
+                    }
+                }
+
+                @media screen and (max-width: 500px) {
+                    .project__container {
+                        zoom: 0.8;
+                    }
+                }
+
+                /* /ОБЩИЕ */
+
+
+                /* КНОПКА1 */
+                .project__btn {
+                    padding: .6em .8em;
+                    font-size: 18px;
+                    position: relative;
+                    background: #2977bd;
+                    color: #fff;
+                    border-radius: .4em;
+                    text-decoration: none;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: .6em;
+                    white-space: nowrap;
+                    border: 1px solid transparent;
+                    line-height: 1;
+                    transition: color .3s, background-color .3s, border-color .3s, box-shadow .3s, opacity .3s;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    box-shadow: none;
+                    cursor: pointer;
+                    font-family: inherit;
+                }
+
+                .project__btn a {
+                    color: #fff;
+                    text-decoration: none !important;
+                }
+
+                .project__btn:hover {
+                    color: #fff;
+                    background-color: #333;
+                }
+
+                /* /КНОПКА1 */
+
+
+
+                /* РАЗДЕЛИТЕЛЬ */
+                .article__wrap {
+                    margin: 50px 0px 50px 0;
+                    border-bottom: 1.5px solid #C1C1C1;
+                    border-top: 1.5px solid #C1C1C1;
+                    height: 7px;
+                    width: 85%;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    .article__wrap {
+                        margin: 20px 0px 40px 0;
+                    }
+                }
+
+                @media screen and (max-width: 1100px) {
+                    .article__wrap {
+                        width: 90%;
+                    }
+                }
+
+                @media screen and (max-width: 770px) {
+                    .article__wrap {
+                        width: 100%;
+                    }
+                }
+
+                /* /РАЗДЕЛИТЕЛЬ */
+
+
+
+                /* ТОР */
+                .project__top-container {
+                    font-family: 'Myriad Pro', sans-serif;
+                    width: 100%;
+                    margin: 0;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #000;
+                }
+
+
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+
+                    50% {
+                        background-position: 100% 50%;
+                    }
+
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+
+                .project__top {
+                    max-width: 1200px;
+                    padding: 10px 0 50px 0;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .project__top2 {
+                    padding: 20px 0 50px 0;
+                }
+
+                .project__top-left {
+                    flex-grow: 1;
+                    margin-right: 50px;
+                    align-items: center;
+                    height: 100%;
+                    width: 67%;
+                    position: relative;
+                }
+
+                .project__top-right {
+                    width: 33%;
+                    padding: 1em;
+                    font-size: 150%;
+                    flex-shrink: 0;
+                    border-radius: .4em;
+                    max-width: 22em;
+                    box-shadow: 0 0 1.2em 0 rgba(0, 0, 0, .25);
+                }
+
+                .project__top-right-container {
+                    padding: .5em 0;
+                    gap: 1.3em;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-top: 1.5px solid #f2f2f2;
+                }
+
+                .project__top-right-container:first-child {
+                    border-top: 0px solid #f2f2f2;
+                }
+
+                .project__top-right-container_left {
+                    font-size: 14px;
+                    line-height: 1.2;
+                }
+
+                .project__top-right-container_left a {
+                    color: #2977bd;
+                }
+
+                .project__top-right-container_right {
+                    order: 1;
+                    flex-shrink: 0;
+                    background-color: #ffe48d;
+                    border-radius: .5em;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 1.8em;
+                    padding: 0 .6em;
+                    font-family: Arial;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 1;
+                    color: #000;
+                }
+
+                .project__top-right-container_right a {
+                    color: #000;
+                    text-decoration: none;
+                }
+
+                .project__top-header {
+                    font-size: 54px;
+                    letter-spacing: -.02em;
+                    line-height: 1;
+                    font-weight: 500;
+                    font-family: 'Myriad Pro Bold', 'Myriad Pro', sans-serif;
+                    width: 100%;
+                    margin: 10px 0 30px 0 !important;
+                    color: #000;
+                }
+
+                .project__top-uppertext {
+                    font-size: 18px;
+                    line-height: 1;
+                    font-weight: 500;
+                    width: 100%;
+                    margin: 0px 0 20px 0 !important;
+                }
+
+                .project__top-uppertext a {
+                    color: #828282;
+                    text-decoration: none;
+                }
+
+                .project__top-tags {
+                    align-items: center;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 15px;
+                    margin: 27px 0 20px 0 !important;
+                }
+
+                .project__top-tag {
+                    display: inline-flex;
+                    gap: .5rem;
+                    padding: .55em 1em .45em;
+                    border: 1px solid #e0e0e0;
+                    border-radius: .6em;
+                    text-align: left;
+                    align-items: center;
+                }
+
+                .project__top-line {
+                    border-bottom: 2px solid #fff;
+                    width: 100%;
+                    margin-bottom: 46px;
+                }
+
+                .project__top-link {
+                    color: #fff !important;
+                    text-decoration: none;
+                    border-bottom: 1px solid #fff;
+                    font-weight: 700;
+                }
+
+                .project__top-text {
+                    width: 90%;
+                    color: #fff !important;
+                    font-size: 18px;
+                    line-height: 28px;
+                    padding: 0 0 15px 0;
+                }
+
+                .project__top-img {
+                    border: 3px solid #fff;
+                    border-radius: 50%;
+                    padding: 15px;
+                    background-color: #ffffff24;
+                    width: 336px;
+                }
+
+                .project__top-img-dop {
+                    position: absolute;
+                    bottom: -143px;
+                    left: -309px;
+                    width: 328px;
+                }
+
+                .project__top-sponsor {
+                    background-color: #a91f0a;
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 5px 50px;
+                    margin: 0px -50px;
+                    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+                    overflow: hidden;
+                }
+
+                .project__top-sponsor-logo {
+                    width: 180px;
+                }
+
+                .project__top-sponsor-text {
+                    width: 90%;
+                    color: #fff !important;
+                    font-size: 18px;
+                    line-height: 28px;
+                    padding: 0;
+                }
+
+                .project__top-right2 {
+                    width: 50%;
+                    max-width: none;
+                }
+
+                /* media */
+                @media screen and (max-width: 1920px) {
+
+                    .project__top-container,
+                    .project__top-container2 {
+                        border-radius: 0px;
+                    }
+                }
+
+                @media screen and (max-width: 1850px) {
+                    .project__top-img-dop {
+                        display: none;
+                    }
+                }
+
+                @media screen and (max-width: 1300px) {
+                    .project__top {
+                        max-width: none;
+                    }
+
+                    .project__top-header,
+                    .project__top-header3,
+                    .project__top-text,
+                    .project__top-sponsor-text {
+                        width: 95%;
+                    }
+
+                    .project__top {
+                        padding: 10px 0 50px 0;
+                    }
+
+                    .project__top-right {
+                        margin: auto 10px;
+                        width: 60%;
+                    }
+
+                    .project__top-right2 {
+                        margin: auto 0px;
+                    }
+
+                    .project__top-header {
+                        font-size: 42px;
+                    }
+
+                    .project__top-right-container {
+                        padding: .2em 0;
+                    }
+
+                    .project__top-right-container_left {
+                        font-size: 16px;
+                    }
+
+                    .project__top-right-container_right {
+                        font-size: 14px;
+                    }
+                }
+
+                @media screen and (max-width: 1250px) {
+                    .project__top-header {
+                        font-size: 36px;
+                    }
+                }
+
+                @media screen and (max-width: 1200px) {
+                    .project__top-header {
+                        font-size: 32px;
+                    }
+                }
+
+                @media screen and (max-width: 1150px) {
+                    .project__top-header {
+                        font-size: 28px;
+                    }
+                }
+
+                @media screen and (max-width: 1100px) {
+                    .project__top {
+                        padding: 30px 0px;
+                    }
+
+                    .project__top-img {
+                        width: 300px;
+                    }
+
+
+                    .project__top-line {
+                        margin-bottom: 22px;
+                    }
+
+                    .project__top-text {
+                        font-size: 16px;
+                        line-height: 22px;
+                    }
+
+                    .project__top-sponsor-text {
+                        font-size: 16px;
+                        line-height: 22px;
+                    }
+                }
+
+                @media screen and (max-width: 1000px) {
+                    .project__top {
+                        flex-direction: column;
+                    }
+
+                    .project__top-header {
+                        font-size: 45px;
+                    }
+
+                    .project__top-left,
+                    .project__top-right {
+                        width: auto;
+                    }
+
+                    .project__top-right {
+                        max-width: 600px;
+                        margin: 50px 0;
+                    }
+
+                    .project__top-right2 {
+                        margin: 0px 0;
+
+                    }
+                }
+
+                @media screen and (max-width: 770px) {
+                    .project__top {
+                        flex-direction: column;
+                        margin-bottom: 40px;
+                    }
+
+                    .project__top-img {
+                        margin-bottom: -140px;
+                    }
+
+                    .project__top-left {
+                        margin-right: 0px;
+                        text-align: center;
+                        width: 100%;
+                    }
+
+                    .project__top-right {
+                        width: auto;
+                        max-width: none;
+                    }
+
+                    .project__top-tags {
+                        justify-content: center;
+                    }
+
+                    .project__top-header,
+                    .project__top-text,
+                    .project__top-sponsor-text {
+                        width: 100%;
+                    }
+
+                    .project__top-text {
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+
+                    .project__top-sponsor-text {
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+
+                    .project__top {
+                        padding: 40px 0px 10px 0px;
+                    }
+                }
+
+                @media screen and (max-width: 600px) {
+                    .project__top-header {
+                        font-size: 28px;
+                    }
+                }
+
+                @media screen and (max-width: 450px) {
+
+                    .project__top {
+                        padding: 40px 0px 10px 0px;
+                    }
+
+                    .project__top-right-container {
+                        flex-direction: column;
+                        gap: 0.3em;
+                        border-bottom: 1px solid #e0e0e0;
+                        padding: .8em 0;
+                    }
+
+                    .project__top-right-container:last-child {
+                        border-bottom: 0px solid #e0e0e0;
+                    }
+
+                    .project__top-right-container_left {
+                        text-align: center;
+                        font-size: 20px;
+                    }
+
+
+                }
+
+                /* ТОР */
+
+
+
+                /* СТАТЬЯ 1 КОЛОНКА */
+                .article__container {
+                    font-family: 'Myriad Pro', sans-serif;
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: #000000;
+                    position: relative;
+                }
+
+                .article__main-container {
+                    width: auto;
+                    margin: 0 auto;
+                    max-width: 1200px;
+                    z-index: 5;
+                    position: relative;
+                }
+
+                .article__header {
+                    font-weight: 400 !important;
+                    font-size: 40px !important;
+                    line-height: 45px !important;
+                    width: 85%;
+                    padding: 30px 0 35px 0;
+                    margin: 0 !important;
+                }
+
+                .article__header2 {
+                    padding: 30px 0 5px 0 !important;
+                }
+
+                .article__header3 {
+                    font-weight: 400 !important;
+                    font-size: 32px !important;
+                    line-height: 40px !important;
+                    width: 85%;
+                    padding: 30px 0 10px 0;
+                    margin: 0 !important;
+                }
+
+                .article__header4 {
+                    padding: 60px 0 0px 0 !important;
+                }
+
+                .article__text {
+                    width: 85%;
+                    padding: 0 0 15px 0;
+
+                    font-size: 18px;
+                    line-height: 1.5;
+                }
+
+                .article__btn-container {
+                    text-align: center;
+                    width: 85%;
+                    margin-top: 35px;
+                    margin-bottom: 100px;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    .article__main-container {
+                        max-width: none;
+                        padding: 0 0;
+                    }
+
+
+                    .article__text {
+                        width: 85%;
+                    }
+                }
+
+                @media screen and (max-width: 1100px) {
+                    .article__main-container {
+                        padding: 0 0 0 0;
+                        width: auto;
+                        max-width: none;
+                    }
+
+                    .article__text {
+                        width: 100%;
+                    }
+                }
+
+                @media screen and (max-width: 1000px) {
+                    .article__header {
+                        padding: 30px 0 20px 0 !important;
+                    }
+                }
+
+                @media screen and (max-width: 770px) {
+                    .article__header {
+                        text-align: center;
+                        width: 100% !important;
+                        font-size: 28px !important;
+                    }
+
+                    .article__header4 {
+                        padding: 60px 0 20px 0 !important;
+                    }
+
+                }
+
+                /* /СТАТЬЯ 1 КОЛОНКА */
+
+                /* КНОПКА2 */
+                .article__btn-container {
+                    text-align: center;
+                    width: 85%;
+                    margin-top: 35px;
+                    margin-bottom: 100px;
+                }
+
+                /* /КНОПКА2 */
+
+
+
+                /* ЗАГ */
+                .project__bottom-container {
+                    font-family: 'Myriad Pro', sans-serif;
+                    width: 100%;
+                    height: auto;
+                    margin: 0;
+                    padding: 0px 0 37px 0;
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+
+                .project__bottom {
+                    width: 100%;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    position: relative;
+                }
+
+                .project__bubble {
+                    display: flex;
+                    width: 100%;
+                    margin-bottom: 0px;
+                }
+
+                .project__bubble-header {
+                    font-size: 32px;
+                    line-height: 40px;
+                    padding: 10px 33px;
+                    background-color: #ffffff;
+                    border-radius: 71px;
+                    border: 1.5px solid #337AB7;
+                    white-space: nowrap;
+                }
+
+                .project__bubble-line {
+                    margin: auto 0px auto 60px;
+                    border-bottom: 1.5px solid #C1C1C1;
+                    border-top: 1.5px solid #C1C1C1;
+                    height: 7px;
+                    flex-grow: 1;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    .project__bubble {
+                        padding: 0 50px;
+                    }
+                }
+
+                @media screen and (max-width: 1100px) {
+                    .project__bottom {
+                        padding: 0 30px 40px 30px;
+                        width: auto;
+                        max-width: none;
+                        overflow: hidden;
+                    }
+
+                    .project__bubble {
+                        padding: 0 0px;
+                    }
+                }
+
+                @media screen and (max-width: 770px) {
+                    .project__bubble {
+                        padding: 0 0px;
+                    }
+
+                    .project__bubble-header {
+                        font-size: 24px !important;
+                        line-height: 30px !important;
+                    }
+
+                    .project__bubble-line {
+                        margin: auto 0px auto 20px;
+                    }
+                }
+
+                /* /ЗАГ */
+
+
+
+                /* ЭКСПЕРТЫ - СЛАЙДЕР */
+                .project__bottom-container {
+                    font-family: 'Myriad Pro', sans-serif;
+                    width: 100%;
+                    height: auto;
+                    margin: 0;
+                    padding: 0px 0 37px 0;
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+
+                @keyframes heartbeat {
+                    0% {
+                        transform: scale(0);
+                    }
+
+                    25% {
+                        transform: scale(1.2);
+                    }
+
+                    50% {
+                        transform: scale(1);
+                    }
+
+                    75% {
+                        transform: scale(1.2);
+                    }
+
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                .slider-overflow {
+                    padding-bottom: 60px;
+                    overflow: hidden;
+                }
+
+                .slider-container {
+                    position: relative;
+                    margin: 0 auto 20px auto;
+                    width: 960px;
+                    height: 480px;
+                }
+
+                .bullet-container {
+                    position: absolute;
+                    bottom: 5px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .bullet {
+                    margin-right: 14px;
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50%;
+                    background-color: #ffffff;
+                    border: 2px solid #337AB7;
+                    cursor: pointer;
+                }
+
+                .bullet:last-child {
+                    margin-right: 0px;
+                }
+
+                .bullet.active {
+                    opacity: 1;
+                    background-color: #337AB7;
+                    border: 2px solid #337AB7;
+                }
+
+                .slider-content {
+                    position: relative;
+                    left: 50%;
+                    top: 50%;
+                    width: 70%;
+                    height: 370px;
+                    transform: translate(-50%, -50%);
+                }
+
+                .slider-single {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: .6em;
+                    display: grid;
+                    gap: 8px;
+                    grid-template-columns: repeat(2, 41% 59%);
+                    grid-template-rows: repeat(2, 1fr);
+                    opacity: 0;
+                    box-shadow: 0 0 1.2em 0 rgba(0, 0, 0, .0);
+                }
+
+                .slider-single-image {
+                    width: 200px;
+                    height: 200px;
+                    transform: scale(0);
+                    opacity: 0;
+                    border-radius: 2.9em;
+                    border: 2px solid #337AB7;
+                    grid-column: 1 / span 1;
+                    margin: 50px 33px 10px 45px;
+                }
+
+                .slider-single-main {
+                    margin: 0 10px 0 45px;
+                    grid-column-start: 1;
+                    grid-row-start: 2;
+                    align-self: start;
+                    font-size: 18px !important;
+                    line-height: 24px;
+                }
+
+                .slider-single-main-big {
+                    font-size: 32px;
+                    line-height: 32px;
+                    display: block;
+                }
+
+                .slider-single-text {
+                    margin: auto 45px auto 0px;
+                    grid-row: span 2 / span 2;
+                    grid-column-start: 2;
+                    grid-row-start: 1;
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+
+                .slider-single-title {
+                    color: #000000;
+                    font-size: 20px;
+                    font-weight: 400;
+                    opacity: 0;
+                }
+
+                .slider-single-image {
+                    transform: translateX(-50%) scale(0);
+                }
+
+                .slider-single.preactive {
+                    z-index: 1;
+                    background: #f2f2f2;
+                    transform: translateX(-629px) scale(0.8);
+                    opacity: 0.6;
+                    transition: transform 1000ms ease-in-out, opacity 1000ms ease-in-out 500ms;
+                    cursor: pointer;
+                }
+
+                .slider-single.preactive .slider-single-image {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+
+                .slider-single.preactive .slider-single-title {
+                    color: #000000;
+                    opacity: 1;
+                }
+
+                .slider-single.proactive {
+                    z-index: 1;
+                    background: #f2f2f2;
+                    transform: translateX(629px) scale(0.8);
+                    opacity: 0.6;
+                    transition: transform 1000ms ease-in-out, opacity 1000ms ease-in-out 500ms;
+                    cursor: pointer;
+                }
+
+                .slider-single.proactive .slider-single-image {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+
+                .slider-single.proactive .slider-single-title {
+                    color: #000000;
+                    opacity: 1;
+                }
+
+                .slider-single.proactivede .slider-single-image {
+                    transform: translateX(50%) scale(0);
+                }
+
+                .slider-single.active {
+                    z-index: 2;
+                    transition: all 1000ms ease-in-out;
+                    background: #f2f2f2;
+                    border-radius: .6em;
+                    color: #000;
+                    opacity: 1;
+                    cursor: pointer;
+                    box-shadow: 0 0 1.2em 0 rgba(0, 0, 0, .25);
+                }
+
+                .slider-single.active .slider-single-image {
+                    opacity: 1;
+                    transform: translateX(0%) scale(1);
+                }
+
+                .slider-single.active .slider-single-title {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+
+                .slider-left {
+                    position: absolute;
+                    right: calc(50% + 195px);
+                    margin-right: -2px;
+                    background: url(https://1med.tv/upload/medialibrary/a2c/ccuja0u4i3n8sdltzvhq0opjxtvafbxx/arrow_left-dark.svg) no-repeat;
+                    width: 50px;
+                    height: 50px;
+                    cursor: pointer;
+                    background-repeat: no-repeat;
+                    transition: all 0.2s ease-in-out;
+                    bottom: -10px;
+                }
+
+                .slider-right {
+                    position: absolute;
+                    left: calc(50% + 195px);
+                    bottom: -10px;
+                    width: 50px;
+                    height: 50px;
+                    margin-left: -2px;
+                    cursor: pointer;
+                    background-repeat: no-repeat;
+                    transition: all 0.2s ease-in-out;
+                    background: url(https://1med.tv/upload/medialibrary/e21/0c9aauaqex4p0397fkt2frc6ex23xt1o/arrow_right-dark.svg) no-repeat;
+                }
+
+                .slider-right:hover,
+                .slider-left:hover {
+                    transform: scale(1.2);
+                }
+
+                .not-visible {
+                    display: none !important;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    .slider-single-title {
+                        font-size: 18px;
+                        line-height: 22px;
+                    }
+
+                    .slider-content {
+                        height: 320px;
+                    }
+
+                    .slider-single-image {
+                        width: 150px;
+                        height: 150px;
+                    }
+
+                    .slider-container {
+                        height: 430px;
+                    }
+                }
+
+                @media screen and (max-width: 1000px) {
+                    .slider-container {
+                        width: 100%;
+                    }
+
+                    .slider-single-title {
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+
+                    .slider-single-image {
+                        width: 177px;
+                        height: 177px;
+                        margin: 30px 33px 10px 30px;
+                    }
+
+                    .slider-single-main {
+                        margin: 0 10px 0 30px;
+                    }
+
+                    .slider-content {
+                        height: 320px;
+                        top: 44%;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    .slider-overflow {
+                        padding-bottom: 0px;
+                    }
+                }
+
+                @media screen and (max-width: 850px) {
+                    .slider-single.preactive {
+                        display: none;
+                    }
+
+                    .slider-single.proactive {
+                        display: none;
+                    }
+
+                    .slider-content {
+                        position: relative;
+                        width: 100%;
+                    }
+
+                    .slider-single.active {
+                        margin: 0 50px;
+                        width: calc(100% - 80px);
+                    }
+                }
+
+                @media screen and (max-width: 770px) {
+                    .slider-single.active {
+                        margin: 0 30px;
+                        width: calc(100% - 60px);
+                    }
+
+                    .slider-single-text {
+                        margin: 20px 45px auto 45px;
+                    }
+
+                    .slider-single {
+                        opacity: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .slider-single-main {
+                        text-align: center;
+                    }
+
+                    .slider-single-main {
+                        margin: 0 45px 0 45px;
+                    }
+
+                    .slider-container {
+                        margin: 20px auto 75px auto;
+                        height: auto;
+                    }
+
+                    .slider-content {
+                        height: 530px;
+                        top: 0;
+                        left: 0;
+                        transform: none;
+                    }
+
+                    .slider-left {
+                        bottom: -65px;
+                    }
+
+                    .slider-right {
+                        bottom: -65px;
+                    }
+
+                    .bullet-container {
+                        bottom: -50px;
+                    }
+
+                    .slider-single-main {
+                        align-self: auto;
+                    }
+                }
+
+                @media screen and (max-width: 570px) {
+                    .slider-single-title {
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+
+                    .slider-single-image {
+                        width: 135px;
+                        height: 135px;
+                    }
+
+                    .bullet-container {
+                        display: none !important;
+                    }
+
+                    .slider-left {
+                        right: calc(50% + 20px);
+                    }
+
+                    .slider-right {
+                        left: calc(50% + 20px);
+                    }
+
+                    .slider-single-main-big {
+                        line-height: 40px;
+                    }
+                }
+
+
+                @media screen and (max-width: 450px) {
+                    .slider-single-main {
+                        margin: 0 15px 0 15px;
+                    }
+
+                    .slider-single-text {
+                        margin: 20px 15px auto 15px;
+                    }
+
+                    .slider-content {
+                        width: 100%;
+                        height: 480px;
+                    }
+
+                    .slider-single.active {
+                        margin: 0 10px;
+                        width: calc(100% - 20px);
+                    }
+                }
+
+                /* /ЭКСПЕРТЫ - СЛАЙДЕР  */
+
+
+
+                /* СТАТЬЯ - СПИСОК */
+                .article__container {
+                    font-family: 'Myriad Pro', sans-serif;
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: #000000;
+                    position: relative;
+                }
+
+                .article__list {
+                    display: flex;
+                }
+
+                .article__list-left {
+                    color: #337AB7;
+                    font-weight: 700;
+                    width: 25%;
+                    padding: 17px 40px 0 0;
+                }
+
+                .article__list-right {
+                    width: 75%;
+                }
+
+                .article__list-ul {
+                    list-style: none;
+                    padding: 0;
+                    position: relative;
+                }
+
+                .article__list-li {
+                    display: flex;
+                }
+
+                .article__list-bullet {
+                    color: #337AB7;
+                    background-color: #337AB7;
+                    border-radius: 50px;
+                    width: 26px;
+                    height: 26px;
+                }
+
+                .article__list-ul::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 12px;
+                    width: 1px;
+                    background-color: #337AB7;
+                }
+
+                .article__list-li::before {
+                    content: '';
+                    position: absolute;
+                    top: -10px;
+                    left: 10px;
+                    width: 2px;
+                    height: var(--gap);
+                    background-color: white;
+                    z-index: 1;
+                }
+
+                .article__list-text {
+                    width: calc(100% - 126px);
+                    margin: 0 50px 25px 50px;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    .article__main-container {
+                        max-width: none;
+                        padding: 0 0;
+                    }
+                }
+
+                @media screen and (max-width: 1100px) {
+                    .article__main-container {
+                        padding: 0 0 0 0;
+                        width: auto;
+                        max-width: none;
+                    }
+
+                    .article__list {
+                        flex-direction: column;
+                    }
+
+                    .article__list-left {
+                        width: 85%;
+                        padding: 20px 40px 10px 0;
+                    }
+
+                    .article__list-right {
+                        width: auto;
+                    }
+                }
+
+                @media screen and (max-width: 770px) {
+                    .article__list-left {
+                        width: 100%;
+                        text-align: center;
+                        padding: 20px 0px 10px 0;
+                    }
+
+                }
+
+                @media screen and (max-width: 465px) {
+                    .article__list-text {
+                        width: calc(100% - 67px);
+                        margin: 0 20px 20px 20px;
+                    }
+                }
+
+                /* /СТАТЬЯ - СПИСОК */
+
+
+
+                /* ЭТАПЫ С КАРТИНКАМИ */
+                .article__container {
+                    font-family: 'Myriad Pro', sans-serif;
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: #000000;
+                    position: relative;
+                }
+
+                .article__infoblock {
+                    padding: 40px 0;
+                }
+
+                .article__infoblock-icons_container {
+                    padding: 40px 0 0 0;
+                }
+
+                .article__infoblock-line {
+                    display: flex;
+                    gap: 30px;
+                }
+
+                .article__infoblock-icons_img {
+                    border-radius: 50%;
+                    border: 1px solid #337AB7;
+                    padding: 10px;
+                    width: 75px;
+                }
+
+                .article__infoblock-icons {
+                    padding: 32px 26px 26px 26px;
+                    border: 1px solid #000000;
+                    border-bottom: none;
+                    border-top: none;
+                }
+
+                .article__infoblock-icons-first {
+                    border-radius: 69px 69px 0 0;
+                    border-top: 1px solid #000000;
+                }
+
+                .article__infoblock-icons-last {
+                    border-radius: 0 0 69px 69px;
+                    border-bottom: 1px solid #000000;
+                }
+
+                .article__infoblock-main {
+                    margin: 10px 0;
+                    width: 70%;
+                    border: 1px solid #e0e0e0;
+                    border-radius: .3em;
+                    min-height: 2.5em;
+                    padding: .75em;
+                    line-height: 1;
+                    font-size: 150%;
+                }
+
+                .article__infoblock-main a {
+                    color: #2977bd;
+
+                }
+
+                .article__infoblock-main_header {
+                    font-size: 22px;
+                    line-height: 30px;
+                    font-weight: 700;
+                    padding: 0 0 15px 0;
+                    color: #2977bd;
+                }
+
+                .article__infoblock-main_text {
+                    padding: 0 0 5px 0;
+                    font-size: 18px;
+                    line-height: 1.5;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    .article__main-container {
+                        max-width: none;
+                        padding: 0 0;
+                    }
+
+                }
+
+                @media screen and (max-width: 1100px) {
+                    .article__main-container {
+                        padding: 0 0 0 0;
+                        width: auto;
+                        max-width: none;
+                    }
+
+                    .article__infoblock-main {
+                        width: 100%;
+                    }
+
+                    .article__infoblock {
+                        padding: 20px 0 20px 0;
+                    }
+                }
+
+                @media screen and (max-width: 1000px) {
+                    .article__infoblock {
+                        padding: 0px 0 20px 0;
+                    }
+                }
+
+                @media screen and (max-width: 770px) {}
+
+                @media screen and (max-width: 500px) {
+                    .article__header {
+                        font-size: 28px !important;
+                        line-height: 32px !important;
+                    }
+
+                    .article__infoblock-main_text {
+                        padding: 0 0 10px 0;
+                        line-height: 25px;
+                    }
+                }
+
+                @media screen and (max-width: 375px) {
+                    .article__infoblock-main {
+                        border: 0px solid #e0e0e0;
+                        padding: 0;
+                    }
+
+                    .article__infoblock-main_header {
+                        padding: 0 0 5px 0;
+                    }
+
+                    .article__main-container {
+                        padding: 0 0 0 0;
+                    }
+                }
+
+                /* /ЭТАПЫ С КАРТИНКАМИ */
+
+
+
+                /* АНОНС С КАРТИНКОЙ СЛЕВА */
+                .article__anons2-container {
+                    width: 100%;
+                    margin: 150px auto 50px auto;
+                    color: #000000;
+                    /*background: url(https://1med.tv/upload/medialibrary/4ee/yq14yh8rajhpuz17o53a3fg93gc2r7g3/back_red-reverse.webp) top center / cover no-repeat;*/
+                    background: #f2f2f2;
+                    border-radius: 100px 0px 150px 0px;
+                    z-index: 10;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .article__anons2-left {
+                    max-width: 600px;
+                    padding: 50px 50px 10px 50px;
+                    margin: auto 0;
+                    width: 50%;
+                }
+
+                .article__anons2-img {
+                    max-width: 1200px;
+                    margin: -150px 0 0 0;
+                    width: 100%;
+                }
+
+                .article__anons2-right {
+                    max-width: 600px;
+                    padding: 50px;
+                    margin: auto 0;
+                    width: 50%;
+                }
+
+                .article__anons2-header {
+                    font-size: 40px;
+                    line-height: 130%;
+                    letter-spacing: -.02em;
+                    font-weight: 500;
+                    font-family: 'Myriad Pro Bold', 'Myriad Pro', sans-serif;
+                    width: 90%;
+                    padding: 0 0 10px 0;
+                }
+
+                .article__anons2-text {
+                    font-size: 18px;
+                    line-height: 1.3;
+                    color: #828282;
+                    font-weight: 400;
+                    margin: 0px 0 20px 0;
+                    width: 90%;
+                }
+
+                @media screen and (max-width: 1500px) {
+                    .article__anons2-left {
+                        padding: 50px 50px 0px 50px;
+                    }
+
+                    .article__anons2-right {
+                        padding: 40px 50px 40px 10px;
+                    }
+                }
+
+                @media screen and (max-width: 1150px) {
+                    .article__anons2-img {
+                        margin: -100px 0 0 0;
+                    }
+                }
+
+                @media screen and (max-width: 1050px) {
+                    .article__anons2-left {
+                        padding: 50px 20px 0px 10px;
+                    }
+
+                    .article__anons2-header {
+                        font-size: 28px;
+                    }
+
+                    .article__anons2-container {
+                        margin: 100px auto 50px auto;
+                    }
+
+                }
+
+                @media screen and (max-width: 800px) {
+                    .article__anons2-container {
+                        flex-direction: column;
+                        align-items: center;
+                        border-radius: .6em;
+                    }
+
+                    .article__anons2-left {
+                        width: auto;
+                        padding: 50px 20px 0px 20px;
+                    }
+
+                    .article__anons2-right {
+                        width: auto;
+                        padding: 0px 20px 40px 20px;
+                    }
+
+                    .article__anons2-header {
+                        text-align: center;
+                        width: auto;
+                    }
+
+                    .article__anons2-text {
+                        text-align: center;
+                        width: auto;
+                    }
+
+                    .project__btn {
+                        display: flex;
+                    }
+                }
+
+                @media screen and (max-width: 770px) {
+                    .project__btn {
+                        width: 100%;
+                    }
+                }
+
+                /* /АНОНС С КАРТИНКОЙ СЛЕВА */
+
+
+
+
+                /* КАРУСЕЛЬ ПРОСТАЯ */
+
+                .carousel__slide {
+                    width: calc(33% - 25px);
+                }
+
+                .carousel__wrapper {
+                    padding: 20px 0 50px 0;
+                }
+
+                .carousel__content {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    position: relative;
+                }
+
+                .carousel__container {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    flex-wrap: wrap;
+                    gap: 30px;
+                    justify-content: space-between;
+                }
+
+                .card {
+                    width: 100%;
+                }
+
+                .card__inner {
+                    border: 3px solid #2977bd;
+                    border-bottom: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    height: 300px;
+                    border-radius: 15px 15px 0 0;
+                    background-color: #ffffff;
+                    position: relative;
+                }
+
+                .card__image {
+                    max-width: 95%;
+                    height: 260px;
+                }
+
+                .card__header {
+                    position: absolute;
+                    text-align: center;
+                    width: 90%;
+                    backdrop-filter: blur(1px);
+                    -webkit-backdrop-filter: blur(1px);
+                    background-color: rgba(255, 255, 255, 0.5);
+                    height: 288px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 18px;
+                }
+
+                .slider-left-small {
+                    position: absolute;
+                    right: calc(50% + 25px);
+                    margin-right: -2px;
+                    background: url(https://1med.tv/upload/medialibrary/a2c/ccuja0u4i3n8sdltzvhq0opjxtvafbxx/arrow_left-dark.svg) no-repeat;
+                    width: 50px;
+                    height: 50px;
+                    cursor: pointer;
+                    background-repeat: no-repeat;
+                    transition: all 0.2s ease-in-out;
+                    bottom: -60px;
+                }
+
+                .slider-right-small {
+                    position: absolute;
+                    left: calc(50% + 25px);
+                    bottom: -60px;
+                    width: 50px;
+                    height: 50px;
+                    margin-left: -2px;
+                    cursor: pointer;
+                    background-repeat: no-repeat;
+                    transition: all 0.2s ease-in-out;
+                    background: url(https://1med.tv/upload/medialibrary/e21/0c9aauaqex4p0397fkt2frc6ex23xt1o/arrow_right-dark.svg) no-repeat;
+                }
+
+                .slider-right-small:hover,
+                .slider-left-small:hover {
+                    transform: scale(1.2);
+                }
+
+                .project__carousel-btn {
+                    border-radius: 0 0 15px 15px;
+                    font-size: 22px;
+                    line-height: 28px;
+                    color: #ffffff;
+                    text-decoration: none !important;
+                    background-color: #2977bd;
+                    position: relative;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    padding: 15px 0;
+                }
+
+                .project__carousel-btn::before {
+                    content: '';
+                    position: absolute;
+                    background-color: #333;
+                    width: 0%;
+                    height: 0%;
+                    top: 50%;
+                    left: 50%;
+                    transition:
+                        width 0.35s ease,
+                        height 0.15s ease,
+                        left 0.35s ease,
+                        top 0.15s ease,
+                        transform 0.5s ease;
+                    border-radius: inherit;
+                }
+
+                .project__carousel-btn:hover::before {
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                }
+
+                .project__carousel-btn:hover {
+                    color: #ffffff;
+                }
+
+                .project__carousel-btn-span {
+                    z-index: 5;
+                    position: relative;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    .carousel__content {
+                        padding: 0 0;
+                    }
+                }
+
+                @media screen and (max-width: 1150px) {
+                    .project__carousel-btn {
+                        font-size: 18px;
+                        line-height: 22px;
+                        margin: 0px 0;
+                    }
+
+                    .carousel__slide {
+                        scroll-snap-align: center;
+                        position: relative;
+                    }
+                }
+
+                @media screen and (max-width: 1100px) {
+                    .carousel__slide {
+                        width: calc(33% - 20px);
+                    }
+
+                    .carousel__content {
+                        padding: 0 0;
+                    }
+                }
+
+                @media screen and (max-width: 800px) {
+                    .project__carousel-btn {
+                        font-size: 18px;
+                        line-height: 22px;
+                        display: flex;
+                        text-align: center;
+                        flex-direction: column;
+                    }
+
+                    .carousel__slide {
+                        width: calc(50% - 20px);
+                        scroll-snap-align: center;
+                        position: relative;
+                    }
+
+                    .carousel__wrapper {
+                        padding: 20px 30px 50px 30px;
+                    }
+
+                    .carousel__content {
+                        padding: 0 0px;
+                    }
+                }
+
+                @media screen and (max-width: 600px) {
+
+                    .carousel__slide {
+                        min-width: 100% !important;
+                        scroll-snap-align: center;
+                        position: relative;
+                    }
+
+                    .card {
+                        margin-right: 10px;
+                    }
+                }
+
+                @media screen and (max-width: 375px) {
+
+                    .carousel__wrapper {
+                        padding: 20px 10px 50px 10px;
+                    }
+                }
+
+                /* /КАРУСЕЛЬ ПРОСТАЯ */
+
+
+
+                /* СИНИЕ ВЫНОСНЫЕ ФОНЫ  */
+                .project__back-center {
+                    background: rgba(51, 122, 183, 0.25);
+                    position: absolute;
+                    width: 100%;
+                    height: 500px;
+                    border-radius: 100px;
+                    opacity: 27%;
+                    margin-left: 50px;
+                }
+
+                .project__back-center2 {
+                    background: rgba(51, 122, 183, 0.25);
+                    position: absolute;
+                    width: 109%;
+                    height: 211px;
+                    border-radius: 100px;
+                    opacity: 27%;
+                    margin: 0 0 0 -65px;
+                }
+
+                .project__back-left {
+                    background: -webkit-linear-gradient(to bottom, rgba(51, 122, 183, 0.25), rgba(51, 122, 183, 0));
+                    background: -moz-linear-gradient(to bottom, rgba(51, 122, 183, 0.25), rgba(51, 122, 183, 0));
+                    background: linear-gradient(to bottom, rgba(51, 122, 183, 0.25), rgba(51, 122, 183, 0));
+                    position: absolute;
+                    left: 0;
+                    width: 35%;
+                    height: 1000px;
+                    border-radius: 0 170px 0 0;
+                    opacity: 27%;
+                    margin-top: -30px;
+                }
+
+                .project__back-left2 {
+                    width: 40%;
+                }
+
+                .project__back-right {
+                    background: -webkit-linear-gradient(to bottom, rgba(51, 122, 183, 0.25), rgba(51, 122, 183, 0));
+                    background: -moz-linear-gradient(to bottom, rgba(51, 122, 183, 0.25), rgba(51, 122, 183, 0));
+                    background: linear-gradient(to bottom, rgba(51, 122, 183, 0.25), rgba(51, 122, 183, 0));
+                    position: absolute;
+                    right: 0;
+                    width: 55%;
+                    height: 1000px;
+                    border-radius: 170px 0 0 0;
+                    opacity: 27%;
+                    margin-top: -30px;
+                }
+
+                .project__back-right2 {
+                    width: 62%;
+                }
+
+                .project__back-right3 {
+                    width: 32%;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    .project__back-center2 {
+                        height: 143px;
+                    }
+
+                    .project__back-center {
+                        height: 406px;
+                    }
+                }
+
+                @media screen and (max-width: 1100px) {
+                    .project__back-center {
+                        height: 1021px;
+                    }
+
+                    .project__back-center2 {
+                        width: 97%;
+                        margin: 0 0 0 -25px;
+                    }
+                }
+
+                @media screen and (max-width: 770px) {
+                    .project__back-left2 {
+                        width: 60%;
+                    }
+
+                    .project__back-center2 {
+                        width: 100%;
+                        height: 371px;
+                    }
+
+                    .project__back-center {
+                        height: 2040px;
+                    }
+                }
+
+                /* /СИНИЕ ВЫНОСНЫЕ ФОНЫ  */
+            </style>
+
+
+            <!-- НАЧАЛО -->
+            <div class="project__container">
+
+                <!-- ТОР -->
+                <div class="project__top-container">
+                    <div class="project__top-container2">
+                        <div class="project__top">
+                            <div class="project__top-left">
+                                <div class="project__top-uppertext">
+                                    <a href="https://test.1med.tv/obrazovatelnye-programmy/">
+                                        Курсы НМО для&nbsp;врачей
+                                    </a>
+                                </div>
+                                <h1 class="project__top-header">
+                                    Современные подходы к&nbsp;диагностике и&nbsp;лечению пациентов с&nbsp;нейропатией
+                                    лицевого нерва
+                                </h1>
+                                <div class="project__top-tags">
+                                    <span class="project__top-tag">
+                                        Неврология
+                                    </span>
+                                </div>
+
+                                <!-- 
+                                <button type="button" class="project__btn">
+                                    <a href="mailto:kasper@mediasphera.ru" target="_blank"> Написать менеджеру программы
+                                    </a>
+                                </button> -->
+
+                            </div>
+
+                            <div class="project__top-right">
+
+                                <div class="project__top-right-container">
+                                    <span class="project__top-right-container_left"><b>Программа повышения квалификации
+                                            &laquo;Очно-заочное&raquo;</b></span>
+                                    <span class="project__top-right-container_right"><b>18 часов</b></span>
+                                </div>
+
+                                <div class="project__top-right-container">
+                                    <span class="project__top-right-container_left">Номер программы на&nbsp;портале
+                                        НМО</span>
+                                    <span class="project__top-right-container_right">V0041900-2023</span>
+                                </div>
+                                <div class="project__top-right-container">
+                                    <span class="project__top-right-container_left">Дата ближайшего курса</span>
+                                    <span class="project__top-right-container_right">15.02.2025 – 15.03.2025</span>
+                                </div>
+                                <div class="project__top-right-container">
+                                    <span class="project__top-right-container_left">Регистрация для слушателей
+                                        на&nbsp;<a target="_blank"
+                                            href="https://edu.rosminzdrav.ru">edu.rosminzdrav.ru</a></span>
+                                    <span class="project__top-right-container_right">открыта</span>
+                                </div>
+                                <div class="project__top-right-container">
+                                    <span class="project__top-right-container_left">Основная специальность</span>
+                                    <span class="project__top-right-container_right">неврология</span>
+                                </div>
+                                <div class="project__top-right-container">
+                                    <span class="project__top-right-container_left">Стоимость</span>
+                                    <span class="project__top-right-container_right">25 000 руб.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ТОР -->
+
+
+                <div class="project__back-left">
+                </div>
+                <div class="project__back-left project__back-left2">
+                </div>
+
+                <!-- СТАТЬЯ 1 КОЛОНКА -->
+                <div class="article__container">
+                    <div class="article__main-container">
+                        <p class="article__text">
+                            <b>Цель:</b> совершенствование и&nbsp;приобретение новых компетенций, повышение
+                            профессионального
+                            уровня в&nbsp;рамках имеющейся квалификации, получение систематизированных теоретических
+                            знаний,
+                            умений и&nbsp;необходимых профессиональных навыков в&nbsp;рамках имеющейся квалификации
+                            по&nbsp;специальности «3.1.24 Неврология», необходимых для&nbsp;своевременной диагностики,
+                            лечения
+                            и&nbsp;реабилитации больных с&nbsp;нейропатией лицевого нерва в&nbsp;соответствии
+                            с&nbsp;последними научными
+                            представлениями и&nbsp;новейшими методами в&nbsp;неврологии.
+                        </p>
+                        <p class="article__text">
+                            <b>Актуальность программы</b> обусловлена распространенностью и&nbsp;медико-социальной
+                            значимостью проблемы нейропатии лицевого нерва, отсутствием единого алгоритма ведения
+                            пациента данной категории, многообразием предлагаемых тактик в&nbsp;научной литературе,
+                            появлением новых и&nbsp;совершенствованием имеющихся технологий и&nbsp;методик диагностики
+                            и&nbsp;лечения.
+                            Полученные в&nbsp;результате обучения знания позволят врачу-неврологу быть готовым
+                            обеспечить
+                            высококвалифицированную специализированную медицинскую помощь пациентам с&nbsp;нейропатией
+                            лицевого нерва.
+                        </p>
+                        <p class="article__text">
+                            <b>Курс разделен на&nbsp;два учебных модуля:</b> заочный и&nbsp;очный, проходящий
+                            на&nbsp;базе классов
+                            медицинской клиники НИИ Скорой помощи им.&nbsp;Н.В.&nbsp;Склифосовского, г.&nbsp;Москва.
+                        </p>
+                        <p class="article__text">
+                            Учебный план заочного учебного модуля <b>«Современные подходы к&nbsp;диагностике
+                                и&nbsp;лечению
+                                пациентов с&nbsp;нейропатией лицевого нерва: теоретические основы»</b> включает
+                            в&nbsp;себя
+                            следующие темы, посвященные нейропатии лицевого нерва, электродиагностике при&nbsp;поражении
+                            периферической нервной системы, стимуляционной и&nbsp;игольчатой миографии
+                            в&nbsp;диагностике
+                            нейропатии лицевого нерва, нейровизуализации при&nbsp;нейропатии лицевого нерва, роли
+                            оториноларинголога в&nbsp;диагностике и&nbsp;лечении пациентов с&nbsp;поражением лицевого
+                            нерва, основным
+                            подходам к&nbsp;лечению нейропатии лицевого нерва, проблеме диагностики и&nbsp;лечения
+                            синкинезий,
+                            диагностике и&nbsp;лечению лагофтальм, психологической помощи пациентам с&nbsp;нейропатией
+                            лицевого
+                            нерва, ботулинотерапии при&nbsp;поражении лицевого нерва, хирургическому лечению нейропатии
+                            лицевого нерва в&nbsp;остром периоде, хирургическому лечению нейропатии лицевого нерва
+                            в&nbsp;хроническом периоде. Заочный модуль представляет собой теоретический блок подготовки
+                            слушателей к&nbsp;практической части.
+                        </p>
+                        <p class="article__text">
+                            Очный модуль <b>«Инъекции ботулинического токсина типа&nbsp;А при&nbsp;нейропатии лицевого
+                                нерва
+                                с&nbsp;отработкой практических навыков»</b>, представляет собой практическую часть
+                            для&nbsp;отработки навыков лечения невропатии лицевого нерва. В&nbsp;данном модуле
+                            рассматриваются
+                            следующие темы: анатомия мышц лица, клиническая диагностика при&nbsp;нейропатии лицевого
+                            нерва:
+                            демонстрация пациента, показания и&nbsp;техника инъекций ботулинического токсина типа&nbsp;А
+                            в&nbsp;мышцы
+                            лица, физическая реабилитация пациента с&nbsp;нейропатией лицевого нерва: методология
+                            восстановительного обучения.
+                        </p>
+                        <p class="article__text">
+                            Итоговая аттестация основана на&nbsp;оценке за&nbsp;тестирование по&nbsp;итогам завершения
+                            курса.
+                        </p>
+
+                    </div>
+                </div>
+                <!-- /СТАТЬЯ 1 КОЛОНКА -->
+
+
+                <!-- ТОР -->
+                <div class="project__top-container">
+                    <div class="project__top-container2">
+                        <div class="project__top project__top2">
+
+                            <div class="project__top-right project__top-right2">
+
+                                <div class="project__top-right-container">
+                                    <span class="project__top-right-container_left"><b>Категории
+                                            слушателей</b><br>(врачи клинических специальностей)</span>
+                                    <span class="project__top-right-container_right">Неврология</span>
+                                </div>
+                                <p class="project__top-right-container_left">
+                                    с требованиями к образованию, согласно Приказа Минздрава России от&nbsp;08.10.2015
+                                    г.&nbsp;№707н «Об&nbsp;утверждении
+                                    Квалификационных требований к&nbsp;медицинским и&nbsp;фармацевтическим работникам
+                                    с&nbsp;высшим
+                                    образованием по&nbsp;направлению подготовки «Здравоохранение и&nbsp;медицинские
+                                    науки» (в&nbsp;ред. Приказа
+                                    Минздрава России от&nbsp;15.06.2017 №&nbsp;328н).
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ТОР -->
+
+                <!-- СТАТЬЯ 1 КОЛОНКА -->
+                <div class="article__container">
+                    <div class="article__main-container">
+                        <h2 class="article__header article__header2">
+                            Преподаватели
+                        </h2>
+                    </div>
+                </div>
+                <!-- /СТАТЬЯ 1 КОЛОНКА -->
+
+
+
+                <!-- ЭКСПЕРТЫ -->
+                <div class="project__bottom-container">
+
+                    <div class="slider-overflow">
+                        <div class="slider-container">
+                            <div class="slider-content">
+
+                                <div class="slider-single">
+                                    <img class="slider-single-image"
+                                        src="https://1med.tv/upload/iblock/717/p86zbhyucuqaxd201637k2y6eunitx48/zavaliy_sq.webp"
+                                        alt="Завалий" />
+                                    <div class="slider-single-title slider-single-main">
+                                        <span class="slider-single-main-big">Завалий</span> Леся Богдановна
+
+                                    </div>
+                                    <div class="slider-single-title slider-single-text">
+
+                                        к.м.н., врач-невролог, старший научный сотрудник отделения неотложной неврологии
+                                        и&nbsp;восстановительного лечения ГБУЗ «Научно-исследовательского института
+                                        скорой
+                                        помощи им.&nbsp;Н.В.&nbsp;Склифосовского Департамента здравоохранения
+                                        г.&nbsp;Москвы»
+
+                                    </div>
+                                </div>
+
+                                <div class="slider-single">
+                                    <img class="slider-single-image"
+                                        src="https://1med.tv/upload/iblock/327/44fyd7l231955l1gd6mslqdw0am750fx/SinkinMV.webp"
+                                        alt="Синкин" />
+                                    <div class="slider-single-title slider-single-main">
+                                        <span class="slider-single-main-big">Синкин</span> Михаил Владимирович
+
+                                    </div>
+                                    <div class="slider-single-title slider-single-text">
+
+                                        д.м.н., врач-невролог, врач функциональной диагностики, ведущий научный
+                                        сотрудник ГБУЗ «Научно-исследовательского института скорой помощи
+                                        им.&nbsp;Н.В.&nbsp;Склифосовского Департамента здравоохранения г.&nbsp;Москвы»
+
+
+                                    </div>
+                                </div>
+                                <div class="slider-single">
+                                    <img class="slider-single-image"
+                                        src="https://1med.tv/upload/medialibrary/711/18wd1o3exr6p1gvhh62ueks47bqnfcnt/polunina_sq.webp"
+                                        alt="Полунина" />
+                                    <div class="slider-single-title slider-single-main">
+                                        <span class="slider-single-main-big">
+                                            Полунина </span> Наталья Алексеевна
+
+
+                                    </div>
+                                    <div class="slider-single-title slider-single-text">
+
+                                        к.м.н., врач-нейрохирург, доцент кафедры фундаментальной нейрохирургии ФДПО
+                                        РНИМУ им.&nbsp;Н.И.&nbsp;Пирогова, научный сотрудник нейрохирургического
+                                        отделения ГБУЗ
+                                        «Научно-исследовательского института скорой помощи
+                                        им.&nbsp;Н.В.&nbsp;Склифосовского
+                                        Департамента здравоохранения г.&nbsp;Москвы»
+
+                                    </div>
+                                </div>
+                                <div class="slider-single">
+                                    <img class="slider-single-image"
+                                        src="https://1med.tv/upload/medialibrary/b52/k87dei00ug1yj51fvicb0hw10ivbrfbf/salihov_sq.webp"
+                                        alt="Салихов" />
+                                    <div class="slider-single-title slider-single-main">
+                                        <span class="slider-single-main-big">
+                                            Салихов </span> Камиль Саламович
+
+
+                                    </div>
+                                    <div class="slider-single-title slider-single-text">
+
+                                        к.м.н., врач челюстно-лицевой, пластический хирург отделения челюстно-лицевой
+                                        хирургии ФГБУ НМИЦ «Центральный научно-исследовательский институт стоматологии
+                                        и&nbsp;челюстно-лицевой хирургии» Министерства здравоохранения Российской
+                                        Федерации
+
+
+                                    </div>
+                                </div>
+                                <div class="slider-single">
+                                    <img class="slider-single-image"
+                                        src="https://1med.tv/upload/medialibrary/590/zhreexvvzrh2mhigdpm2xpigb1p0os7k/kutrovskaya_sq.webp"
+                                        alt="Кутровская" />
+                                    <div class="slider-single-title slider-single-main">
+                                        <span class="slider-single-main-big">
+
+                                            Кутровская
+
+                                        </span> Наталья Юрьевна
+                                    </div>
+                                    <div class="slider-single-title slider-single-text">
+                                        к.м.н., врач-офтальмолог, доцент кафедры глазных болезней ФГБОУ ВО «Московского
+                                        государственного медико-стоматологического университета
+                                        им.&nbsp;А.И.&nbsp;Евдокимова» МЗ&nbsp;РФ
+                                    </div>
+                                </div>
+
+                                <div class="slider-single">
+                                    <img class="slider-single-image"
+                                        src="https://1med.tv/upload/medialibrary/7f7/h02j47ie74f9787dlkxiv3vdvyiflmrx/neznanova_sq.webp"
+                                        alt="Незнанова" />
+                                    <div class="slider-single-title slider-single-main">
+                                        <span class="slider-single-main-big">Незнанова</span>
+                                        Мария Викторовна
+
+                                    </div>
+                                    <div class="slider-single-title slider-single-text">
+                                        врач-рентгенолог, ГБУЗ «Научно-исследовательского института скорой помощи
+                                        им.&nbsp;Н.В.&nbsp;Склифосовского Департамента здравоохранения г.&nbsp;Москвы»
+                                    </div>
+                                </div>
+
+                                <div class="slider-single">
+                                    <img class="slider-single-image"
+                                        src="https://1med.tv/upload/medialibrary/3b2/mqks832estp7dmpwdito13dbgnc6j595/seliverstovaEG_sq.webp"
+                                        alt="Селиверстова" />
+                                    <div class="slider-single-title slider-single-main">
+                                        <span class="slider-single-main-big">Селиверстова</span>
+                                        Екатерина Геннадьевна
+                                    </div>
+                                    <div class="slider-single-title slider-single-text">
+                                        врач функциональной диагностики, младший научный сотрудник нейрохирургического
+                                        отделения ГБУЗ «Научно-исследовательского института скорой помощи
+                                        им.&nbsp;Н.В.&nbsp;Склифосовского Департамента здравоохранения г.&nbsp;Москвы»
+
+                                    </div>
+                                </div>
+
+                                <div class="slider-single">
+                                    <img class="slider-single-image"
+                                        src="https://1med.tv/upload/medialibrary/393/0avkxo1g2bnmvwgwth4rfkovd2d4v5tv/roshina_sq.webp"
+                                        alt="Рощина" />
+                                    <div class="slider-single-title slider-single-main">
+                                        <span class="slider-single-main-big">Рощина</span>
+                                        Дарья Викторовна
+                                    </div>
+                                    <div class="slider-single-title slider-single-text">
+                                        врач оториноларинголог ГБУЗ «Научно-исследовательского института скорой помощи
+                                        им.&nbsp;Н.В.&nbsp;Склифосовского Департамента здравоохранения г.&nbsp;Москвы»
+                                    </div>
+                                </div>
+
+                                <div class="slider-single">
+                                    <img class="slider-single-image"
+                                        src="https://1med.tv/upload/medialibrary/f32/cocih1099tc98pdo40n0osmcr5sh4s1v/rahmanina_sq.webp"
+                                        alt="Рахманина" />
+                                    <div class="slider-single-title slider-single-main">
+                                        <span class="slider-single-main-big">Рахманина</span>
+                                        Анастасия Алексеевна
+
+                                    </div>
+                                    <div class="slider-single-title slider-single-text">
+
+                                        медицинский психолог ГБУЗ «Научно-исследовательского института скорой помощи
+                                        им.&nbsp;Н.В.&nbsp;Склифосовского Департамента здравоохранения г.&nbsp;Москвы»
+
+                                    </div>
+                                </div>
+
+                                <div class="slider-single">
+                                    <img class="slider-single-image"
+                                        src="https://1med.tv/upload/medialibrary/ecf/cpw5ffvcqyf5w0nyr23u5pq3x1da03lr/chehonackaya_sq.webp"
+                                        alt="Чехонацкая" />
+                                    <div class="slider-single-title slider-single-main">
+                                        <span class="slider-single-main-big">Чехонацкая</span>
+                                        Карина Игоревна
+
+                                    </div>
+                                    <div class="slider-single-title slider-single-text">
+
+                                        врач-невролог АО «Ильинская больница»
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ЭКСПЕРТЫ -->
+
+                <div class="project__back-right">
+                </div>
+                <div class="project__back-right project__back-right2">
+                </div>
+
+
+                <!-- СТАТЬЯ 1 КОЛОНКА -->
+                <div class="article__container">
+                    <div class="article__main-container">
+                        <h2 class="article__header">
+                            Содержание программы
+                        </h2>
+                    </div>
+                </div>
+                <!-- /СТАТЬЯ 1 КОЛОНКА -->
+
+
+
+
+                <!-- СТАТЬЯ - СПИСОК -->
+                <div class="article__container">
+                    <div class="article__main-container">
+                        <div class="article__list">
+                            <div class="article__list-left">
+                                МОДУЛЬ 1.<br>«Современные подходы к&nbsp;диагностике и&nbsp;лечению пациентов
+                                с&nbsp;нейропатией лицевого нерва: теоретические основы» (Заочный)
+                            </div>
+                            <div class="article__list-right">
+                                <ul class="article__list-ul">
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Нейропатия лицевого нерва
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Электродиагностика при&nbsp;поражении периферической нервной системы
+
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Стимуляционная и&nbsp;игольчатая миография в&nbsp;диагностике нейропатии
+                                            лицевого нерва
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Нейровизуализация при&nbsp;нейропатии лицевого нерва
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Роль оториноларинголога в&nbsp;диагностике и&nbsp;лечении пациентов
+                                            с&nbsp;поражением лицевого нерва
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Основные подходы к&nbsp;лечению нейропатии лицевого нерва
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Проблема диагностики и&nbsp;лечения синкинезий
+
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Диагностика и&nbsp;лечение лагофтальма
+
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Психологическая помощь пациентам с&nbsp;нейропатией лицевого нерва
+
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Ботулинотерапия при&nbsp;поражении лицевого нерва
+
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Хирургическое лечение нейропатии лицевого нерва в&nbsp;остром периоде
+
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Хирургическое лечение нейропатии лицевого нерва в&nbsp;хроническом периоде
+
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Итого
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="article__list">
+                            <div class="article__list-left">
+                                МОДУЛЬ 2.<br>«Инъекции ботулинического токсина типа&nbsp;А при&nbsp;нейропатии лицевого
+                                нерва с&nbsp;отработкой практических навыков» (Очный)
+                            </div>
+                            <div class="article__list-right">
+                                <ul class="article__list-ul">
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Анатомия мышц лица
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Клиническая диагностика при&nbsp;нейропатии лицевого нерва: демонстрация
+                                            пациента
+
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Показания и&nbsp;техника инъекций ботулинического токсина типа&nbsp;А
+                                            в&nbsp;мышцы лица
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Физическая реабилитация пациента с&nbsp;нейропатией лицевого нерва:
+                                            методология восстановительного обучения
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Итоговая аттестация
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /СТАТЬЯ - СПИСОК -->
+
+
+                <!-- АНОНС С КАРТИНКОЙ СЛЕВА -->
+                <div class="article__anons2-container">
+                    <div class="article__anons2-left">
+                        <img class="article__anons2-img"
+                            src="https://1med.tv/upload/medialibrary/86d/6c6e93fsr1y5wqgaauj6ukzutc5kqd09/screen2.webp"
+                            alt="ноутбук">
+                    </div>
+                    <div class="article__anons2-right">
+                        <p class="article__anons2-header">
+                            Учебная программа
+                        </p>
+                        <p class="article__anons2-text">
+                            «Современные подходы к&nbsp;диагностике и&nbsp;лечению пациентов с&nbsp;нейропатией
+                                    лицевого нерва»
+                        </p>
+                        <!-- КНОПКА2 -->
+                        <a class="project__btn" target="_blank"
+                            href="https://1med.tv/upload/medialibrary/591/x1oaq6fygnqo64v7ghh0riojlvc7bmla/Уч.программа%20неврология_лицо%20РИА%20МС%20подписана.pdf">
+                            Скачать PDF
+                        </a>
+                        <!-- КНОПКА2 -->
+                    </div>
+
+                </div>
+                <!-- /АНОНС С КАРТИНКОЙ СЛЕВА -->
+
+
+
+                <!-- СТАТЬЯ 1 КОЛОНКА -->
+                <div class="article__container">
+                    <div class="article__main-container">
+                        <h2 class="article__header">
+                            Результат
+                        </h2>
+                        <p class="article__text">
+                           В результате обучения слушатели приобретут следующие специальные знания:
+
+                        </p>
+                        <p class="article__text">
+                            — основные клинико-инструментальные диагностические мероприятия у&nbsp;пациентов с&nbsp;нейропатией лицевого нерва;
+                        </p>
+
+                        <p class="article__text">
+
+                            — определение двигательного паттерна при&nbsp;нейропатии лицевого нерва, выбор тактики ведения пациента;
+
+                        </p>
+
+                        <p class="article__text">
+                            — интерпретация данных магнитно-резонансной томографии и&nbsp;электродиагностики у&nbsp;пациентов с&nbsp;нейропатией лицевого нерва;
+
+                        </p>
+
+                        <p class="article__text">
+
+                            — проведение дифференциальной диагностики пациентам с&nbsp;поражением лицевого нерва и&nbsp;верификация диагноза;
+                        </p>
+
+                        <p class="article__text">
+
+                            — современные консервативные и&nbsp;хирургические методы лечения, применяемые у&nbsp;пациентов с&nbsp;нейропатией лицевого нерва;
+                        </p>
+
+                        <p class="article__text">
+
+                            — ботулинотерапия при&nbsp;поражении лицевого нерва;
+                        </p>
+
+                        <p class="article__text">
+
+                            — оформление медицинской документации пациентам с&nbsp;нейропатией лицевого нерва.
+                        </p>
+
+                    </div>
+                </div>
+                <!-- /СТАТЬЯ 1 КОЛОНКА -->
+
+
+
+
+
+                <!-- РАЗДЕЛИТЕЛЬ 
+                <div class="article__wrap">
+                </div>
+             /РАЗДЕЛИТЕЛЬ -->
+
+
+                <div class="project__back-right project__back-right3">
+                </div>
+
+
+
+
+                <!-- ЭТАПЫ С КАРТИНКАМИ -->
+                <div class="article__container">
+
+                    <div class="article__main-container">
+                        <h2 class="article__header article__header4">
+                            Как проходит обучение?
+                        </h2>
+
+                        <div class="article__infoblock">
+                            <div class="article__infoblock-line">
+                                <div class="article__infoblock-main">
+                                    <div class="article__infoblock-main_header">
+                                        1. Зарегистрируйтесь
+                                    </div>
+                                    <div>
+                                        <p class="article__infoblock-main_text">
+                                            на обучающий цикл программы
+                                            на&nbsp;портале
+                                            <a target="_blank" href="https://edu.rosminzdrav.ru">edu.rosminzdrav.ru</a>
+                                            (количество мест на&nbsp;курс ограничено)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article__infoblock-line">
+                                <div class="article__infoblock-main">
+                                    <div class="article__infoblock-main_header">
+                                        2. Оплатите программу 
+                                    </div>
+                                    <div>
+                                        <p class="article__infoblock-main_text">и получите подтверждения от менеджера программы</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article__infoblock-line">
+                                <div class="article__infoblock-main">
+                                    <div class="article__infoblock-main_header">
+                                        3. Соберите пакет документов
+                                    </div>
+                                    <div>
+                                        <p class="article__infoblock-main_text"> по списку и&nbsp;отправьте менеджеру
+                                            программы на&nbsp;адрес <a target="_blank"
+                                                href="mailto:kasper@mediasphera.ru">kasper@mediasphera.ru</a></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article__infoblock-line">
+                                <div class="article__infoblock-main">
+                                    <div class="article__infoblock-main_header">
+                                        4. Пройдите обучение
+                                    </div>
+                                    <div>
+                                        <p class="article__infoblock-main_text"> и тестирование, получите удостоверение
+                                            о&nbsp;повышении квалификации</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ЭТАПЫ С КАРТИНКАМИ -->
+
+
+
+
+
+
+                <!-- СТАТЬЯ 1 КОЛОНКА -->
+                <div class="article__container">
+                    <div class="article__main-container">
+                        <h2 class="article__header">
+                            Документы программы
+                        </h2>
+
+                    </div>
+                </div>
+                <!-- /СТАТЬЯ 1 КОЛОНКА -->
+
+
+                <!-- КАРУСЕЛЬ ПРОСТАЯ -->
+                <section class="carousel" id="carousel">
+                    <div class="carousel__wrapper">
+                        <div>
+                            <div class="carousel__content">
+                                <div class="carousel__container">
+                                    <div class="carousel__slide">
+                                        <div class="card">
+                                            <div class="card__inner">
+                                                <img class="card__image"
+                                                    src="https://1med.tv/upload/medialibrary/438/zhzo8c6ry7to4yjrzd0dfhmbqt3wszfg/doc21.webp"
+                                                    alt="doc" />
+                                                <div class="card__header"> Заявление на&nbsp;зачисление Склиф неврология
+                                                </div>
+                                            </div>
+                                            <a class="project__carousel-btn" target="_blank"
+                                                href="https://1med.tv/upload/medialibrary/1ec/ccwt6pt8mukzhbvf9pyt9xup5klzqho6/Заявление%20на%20зачисление%20Склиф%20неврология.docx">
+                                                <span class="project__carousel-btn-span">Скачать DOC</span>
+                                            </a>
+                                        </div>
+                                    </div>                                   
+                                    <div class="carousel__slide">
+                                        <div class="card">
+                                            <div class="card__inner">
+                                                <img class="card__image"
+                                                    src="https://1med.tv/upload/medialibrary/efe/he3icytpil382pm3lh77oqptffhpjgel/doc22.webp"
+                                                    alt="doc" />
+                                                <div class="card__header">
+                                                    Необходимые документы для&nbsp;обучения
+                                                </div>
+                                            </div>
+                                            <a class="project__carousel-btn" target="_blank"
+                                                href="https://1med.tv/upload/medialibrary/6c9/nem5pqyuukpghcg1k3f1fk2h3lr2busf/Необходимые%20документы%20для%20обучения%20(2).docx">
+                                                <span class="project__carousel-btn-span">Скачать DOC</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel__slide">
+                                        <div class="card">
+                                            <div class="card__inner">
+                                                <img class="card__image"
+                                                    src="https://1med.tv/upload/medialibrary/443/z6hv03l05pp9t81wyz1gq21voiye1kn8/doc23.webp"
+                                                    alt="doc" />
+                                                <div class="card__header">
+                                                    Договор платные обр. услуги РИА&nbsp;МС&nbsp;ФЛ
+                                                </div>
+                                            </div>
+                                            <a class="project__carousel-btn" target="_blank"
+                                                href="https://1med.tv/upload/medialibrary/bab/snbk4o40z794zrfqyqe8spws0x92ixe9/Договор_платные_обр_услуги_РИА%20МС_ФЛ_2.docx">
+                                                <span class="project__carousel-btn-span">Скачать PDF</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- /КАРУСЕЛЬ ПРОСТАЯ -->
+
+            </div>
+            <!-- КОНЕЦ -->
+
+            <script type="text/javascript" id="" charset="">
+
+                console.log("111");
+                //document.addEventListener("DOMContentLoaded", function() {
+                // ЭКСПЕРТЫ - СЛАЙДЕР
+                let timer;
+
+                function slideInitial() {
+                    initBullets();
+                    initArrows();
+
+                    setTimeout(() => {
+                        slideRight();
+                        startAutoPlay();
+                    }, 500);
+                }
+
+                function startAutoPlay() {
+                    clearInterval(timer);
+                    timer = setInterval(slideRight, 6000);
+                }
+
+                function stopAutoPlay() {
+                    clearInterval(timer);
+                }
+
+                const repeat = false;
+                const noArrows = false;
+                const noBullets = false;
+
+                const container = document.querySelector('.slider-container');
+
+                if (container) {
+
+                    var slide = document.querySelectorAll('.slider-single');
+                    var slideTotal = slide.length - 1;
+                    var slideCurrent = -1;
+
+                    startAutoPlay();
+
+                    function initBullets() {
+                        if (noBullets) return;
+
+                        const bulletContainer = document.createElement('div');
+                        bulletContainer.classList.add('bullet-container');
+
+                        slide.forEach((_, i) => {
+                            const bullet = document.createElement('div');
+                            bullet.classList.add('bullet');
+                            bullet.id = `bullet-index-${i}`;
+                            bullet.addEventListener('click', () => {
+                                stopAutoPlay();
+                                goToIndexSlide(i);
+                            });
+                            bulletContainer.appendChild(bullet);
+                        });
+
+                        container.appendChild(bulletContainer);
+                    }
+
+                    function initArrows() {
+                        if (noArrows) return;
+
+                        const leftArrow = document.createElement('a');
+                        const iLeft = document.createElement('i');
+                        iLeft.classList.add('fa', 'fa-arrow-left');
+                        leftArrow.classList.add('slider-left');
+                        leftArrow.appendChild(iLeft);
+                        leftArrow.addEventListener('click', () => {
+                            stopAutoPlay();
+                            slideLeft();
+                            startAutoPlay();
+                        });
+
+                        const rightArrow = document.createElement('a');
+                        const iRight = document.createElement('i');
+                        iRight.classList.add('fa', 'fa-arrow-right');
+                        rightArrow.classList.add('slider-right');
+                        rightArrow.appendChild(iRight);
+                        rightArrow.addEventListener('click', () => {
+                            stopAutoPlay();
+                            slideRight();
+                            startAutoPlay();
+                        });
+
+                        container.appendChild(leftArrow);
+                        container.appendChild(rightArrow);
+                    }
+
+                    function slideInitial() {
+                        initBullets();
+                        initArrows();
+                        setTimeout(function () {
+                            slideRight();
+                        }, 500);
+                    }
+
+                    function updateBullet() {
+                        if (!noBullets) {
+                            document.querySelectorAll('.bullet').forEach((elem, i) => {
+                                elem.classList.toggle('active', i === slideCurrent);
+                            });
+                        }
+                        checkRepeat();
+                    }
+
+                    function checkRepeat() {
+                        if (!repeat) {
+                            if (slideCurrent === slide.length - 1) {
+                                slide[0].classList.add('not-visible');
+                                slide[slide.length - 1].classList.remove('not-visible');
+                                if (!noArrows) {
+                                    document.querySelector('.slider-right').classList.add('not-visible')
+                                    document.querySelector('.slider-left').classList.remove('not-visible')
+                                }
+                            }
+                            else if (slideCurrent === 0) {
+                                slide[slide.length - 1].classList.add('not-visible');
+                                slide[0].classList.remove('not-visible');
+                                if (!noArrows) {
+                                    document.querySelector('.slider-left').classList.add('not-visible')
+                                    document.querySelector('.slider-right').classList.remove('not-visible')
+                                }
+                            } else {
+                                slide[slide.length - 1].classList.remove('not-visible');
+                                slide[0].classList.remove('not-visible');
+                                if (!noArrows) {
+                                    document.querySelector('.slider-left').classList.remove('not-visible')
+                                    document.querySelector('.slider-right').classList.remove('not-visible')
+                                }
+                            }
+                        }
+                    }
+
+                    function changeSlide(direction) {
+                        removeListenersFromSlides();
+                        let nextIndex;
+                        switch (direction) {
+                            case 'right':
+                                nextIndex = slideCurrent >= slideTotal ? 0 : slideCurrent + 1;
+                                break;
+                            case 'left':
+                                nextIndex = slideCurrent <= 0 ? slideTotal : slideCurrent - 1;
+                                break;
+                        }
+
+                        slide.forEach(elem => {
+                            elem.classList.remove('preactivede', 'preactive', 'active', 'proactive', 'proactivede');
+                        });
+
+                        if (nextIndex > 0) {
+                            slide[nextIndex - 1].classList.add('preactive');
+                        }
+                        slide[nextIndex].classList.add('active');
+                        if (nextIndex < slideTotal) {
+                            slide[nextIndex + 1].classList.add('proactive');
+                        }
+
+                        slideCurrent = nextIndex;
+                        addListenersForSlides();
+                        updateBullet();
+                    }
+
+                    document.querySelectorAll('.slider-single').forEach(sliderItem => {
+                        sliderItem.addEventListener('click', function (event) {
+                            event.stopPropagation();
+                            const activeClass = this.classList.contains('preactive') ? 'preactive' : 'proactive';
+                            if (activeClass === 'preactive') {
+                                slideLeft();
+                            } else if (activeClass === 'proactive') {
+                                slideRight();
+                            }
+                            stopAutoPlay();
+                        });
+                    });
+
+                    function addListenersForSlides() {
+                        const preactive = document.querySelector('.preactive');
+                        const proactive = document.querySelector('.proactive');
+
+                        if (proactive) {
+                            proactive.addEventListener('click', slideRight);
+                            proactive.classList.add('pointer');
+                        }
+                        if (preactive) {
+                            preactive.addEventListener('click', slideLeft);
+                            preactive.classList.add('pointer');
+                        }
+                    }
+
+                    addListenersForSlides();
+
+                    function removeListenersFromSlides() {
+                        const oldProactive = document.querySelector('.proactive');
+                        const oldPreactive = document.querySelector('.preactive');
+
+                        if (oldProactive) {
+                            oldProactive.removeEventListener('click', slideRight);
+                            oldProactive.classList.remove('pointer');
+                        }
+                        if (oldPreactive) {
+                            oldPreactive.removeEventListener('click', slideLeft);
+                            oldPreactive.classList.remove('pointer');
+                        }
+                    }
+
+                    function slideRight() { changeSlide('right'); }
+                    function slideLeft() { changeSlide('left'); }
+
+                    function goToIndexSlide(index) {
+                        const sliding = (slideCurrent > index) ? () => slideRight() : () => slideLeft();
+                        while (slideCurrent !== index) {
+                            sliding();
+                        }
+                    }
+
+                    slideInitial();
+
+
+                }
+
+
+                // /ЭКСПЕРТЫ - СЛАЙДЕР
+                //});
+
+
+
+            </script>
+
+
+
+
+
+
+
+
+        </section>
+    </main>
 </body>
+
 </html>
