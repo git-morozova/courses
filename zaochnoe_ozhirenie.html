@@ -10,8 +10,6 @@
     <meta name="format-detection" content="telephone=no">
     <title>Test</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer=""></script>
 </head>
 
 <body>
@@ -324,14 +322,15 @@
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
-                    height: 1.8em;
-                    padding: 0 .6em;
+                    padding: 0.5em .6em;
                     font-family: Arial;
                     font-style: normal;
                     font-weight: 500;
                     font-size: 14px;
                     line-height: 1;
                     color: #000;
+                        text-align: right;
+                            max-width: 14em;
                 }
 
                 .project__top-right-container_right a {
@@ -645,6 +644,10 @@
                         text-align: center;
                         font-size: 20px;
                     }
+                    .project__top-right-container_right {
+                           text-align: center;
+                               max-width: none;
+                    }
 
 
                 }
@@ -699,9 +702,13 @@
                 .article__text {
                     width: 85%;
                     padding: 0 0 15px 0;
-
                     font-size: 18px;
                     line-height: 1.5;
+                }
+
+                .article__ul {
+                    padding: 0 0 0 30px;
+                    margin: 0;
                 }
 
                 .article__btn-container {
@@ -1060,7 +1067,7 @@
                     position: absolute;
                     right: calc(50% + 195px);
                     margin-right: -2px;
-                    background: url(https://1med.tv/upload/medialibrary/a2c/ccuja0u4i3n8sdltzvhq0opjxtvafbxx/arrow_left-dark.svg) no-repeat;
+                    background: url(/upload/medialibrary/a2c/ccuja0u4i3n8sdltzvhq0opjxtvafbxx/arrow_left-dark.svg) no-repeat;
                     width: 50px;
                     height: 50px;
                     cursor: pointer;
@@ -1079,7 +1086,7 @@
                     cursor: pointer;
                     background-repeat: no-repeat;
                     transition: all 0.2s ease-in-out;
-                    background: url(https://1med.tv/upload/medialibrary/e21/0c9aauaqex4p0397fkt2frc6ex23xt1o/arrow_right-dark.svg) no-repeat;
+                    background: url(/upload/medialibrary/e21/0c9aauaqex4p0397fkt2frc6ex23xt1o/arrow_right-dark.svg) no-repeat;
                 }
 
                 .slider-right:hover,
@@ -1529,7 +1536,7 @@
                     width: 100%;
                     margin: 150px auto 50px auto;
                     color: #000000;
-                    /*background: url(https://1med.tv/upload/medialibrary/4ee/yq14yh8rajhpuz17o53a3fg93gc2r7g3/back_red-reverse.webp) top center / cover no-repeat;*/
+                    /*background: url(/upload/medialibrary/4ee/yq14yh8rajhpuz17o53a3fg93gc2r7g3/back_red-reverse.webp) top center / cover no-repeat;*/
                     background: #f2f2f2;
                     border-radius: 100px 0px 150px 0px;
                     z-index: 10;
@@ -1716,7 +1723,7 @@
                     position: absolute;
                     right: calc(50% + 25px);
                     margin-right: -2px;
-                    background: url(https://1med.tv/upload/medialibrary/a2c/ccuja0u4i3n8sdltzvhq0opjxtvafbxx/arrow_left-dark.svg) no-repeat;
+                    background: url(/upload/medialibrary/a2c/ccuja0u4i3n8sdltzvhq0opjxtvafbxx/arrow_left-dark.svg) no-repeat;
                     width: 50px;
                     height: 50px;
                     cursor: pointer;
@@ -1735,7 +1742,7 @@
                     cursor: pointer;
                     background-repeat: no-repeat;
                     transition: all 0.2s ease-in-out;
-                    background: url(https://1med.tv/upload/medialibrary/e21/0c9aauaqex4p0397fkt2frc6ex23xt1o/arrow_right-dark.svg) no-repeat;
+                    background: url(/upload/medialibrary/e21/0c9aauaqex4p0397fkt2frc6ex23xt1o/arrow_right-dark.svg) no-repeat;
                 }
 
                 .slider-right-small:hover,
@@ -1977,7 +1984,7 @@
                         <div class="project__top">
                             <div class="project__top-left">
                                 <div class="project__top-uppertext">
-                                    <a href="https://test.1med.tv/obrazovatelnye-programmy/">
+                                    <a href="/obrazovatelnye-programmy/">
                                         Курсы НМО для&nbsp;врачей
                                     </a>
                                 </div>
@@ -2032,14 +2039,13 @@
                                 </div>
                                 <div class="project__top-right-container">
                                     <span class="project__top-right-container_left">Вид выдаваемого документа</span>
-                                    <span class="project__top-right-container_right">удостоверение<br>о
-                                        повышении<br>квалификации</span>
+                                    <span class="project__top-right-container_right">удостоверение о&nbsp;повышении квалификации</span>
                                 </div>
                                 <div class="project__top-right-container">
                                     <span class="project__top-right-container_left">Уровень профессионального
                                         образования</span>
-                                    <span class="project__top-right-container_right">высшее образование<br>(уровень
-                                        подготовки<br>кадров высшей<br>квалификации)</span>
+                                    <span class="project__top-right-container_right">высшее образование (уровень
+                                        подготовки кадров высшей квалификации)</span>
                                 </div>
                                 <div class="project__top-right-container">
                                     <span class="project__top-right-container_left">Стоимость</span>
@@ -2062,28 +2068,35 @@
                     <div class="article__main-container">
                         <p class="article__text">
 
-                            Данная программа направлена на совершенствование и формирование профессиональных
-                            компетенций, необходимых для оказания качественной медицинской помощи пациентам с ожирением.
+                            Данная программа направлена на&nbsp;совершенствование и&nbsp;формирование профессиональных
+                            компетенций, необходимых для&nbsp;оказания качественной медицинской помощи пациентам
+                            с&nbsp;ожирением.
 
 
                         </p>
                         <p class="article__text">
 
-                            Программа повышения квалификации посвящена диагностике и современным методам лечения
-                            ожирения. Темы направлены на повышение знаний специалистов в области эндокринологии и
-                            смежных специальностей. Задача программы не только в повышении уровня знаний и
-                            профессионализма врачей, но и в создании условий для междисциплинарного диалога.
+                            Программа повышения квалификации посвящена диагностике и&nbsp;современным методам лечения
+                            ожирения. Темы направлены на&nbsp;повышение знаний специалистов в&nbsp;области
+                            эндокринологии
+                            и&nbsp;смежных специальностей. Задача программы не&nbsp;только в&nbsp;повышении уровня
+                            знаний
+                            и&nbsp;профессионализма врачей, но&nbsp;и&nbsp;в&nbsp;создании условий
+                            для&nbsp;междисциплинарного диалога.
 
 
                         </p>
                         <p class="article__text">
 
-                            <b>Цель:</b> удовлетворение образовательных и профессиональных потребностей, обеспечение
-                            соответствия квалификации врачей под меняющиеся условия профессиональной деятельности и
-                            социальной среды, совершенствование имеющихся компетенций, необходимых для профессиональной
-                            деятельности и повышения профессионального уровня в рамках имеющейся квалификации для
-                            оказания квалифицированной медицинской помощи методами и возможностями современной медицины
-                            пациентам с ожирением.
+                            <b>Цель:</b> удовлетворение образовательных и&nbsp;профессиональных потребностей,
+                            обеспечение
+                            соответствия квалификации врачей под&nbsp;меняющиеся условия профессиональной деятельности
+                            и&nbsp;социальной среды, совершенствование имеющихся компетенций, необходимых
+                            для&nbsp;профессиональной
+                            деятельности и&nbsp;повышения профессионального уровня в&nbsp;рамках имеющейся квалификации
+                            для&nbsp;оказания квалифицированной медицинской помощи методами и&nbsp;возможностями
+                            современной медицины
+                            пациентам с&nbsp;ожирением.
 
 
                         </p>
@@ -2091,31 +2104,34 @@
 
                             <b>Задачи:</b>
                         </p>
-                        <ul class="article__text">
+                        <ul class="article__ul">
                             <li>
-                                изучение этиологии, патогенеза, клиники, диагностики и современных методов лечения
-                                пациентов с ожирением;
+                                изучение этиологии, патогенеза, клиники, диагностики и&nbsp;современных методов лечения
+                                пациентов с&nbsp;ожирением;
 
                             </li>
                             <li>
-                                выработка практических навыков и основных приемов, необходимых для правильной постановки
-                                диагноза и выбора методов лечения пациентов с ожирением;
+                                выработка практических навыков и&nbsp;основных приемов, необходимых для&nbsp;правильной
+                                постановки
+                                диагноза и&nbsp;выбора методов лечения пациентов с&nbsp;ожирением;
 
                             </li>
                             <li>
-                                ознакомление с последними достижениями в методах диагностики и лечения пациентов с
+                                ознакомление с&nbsp;последними достижениями в&nbsp;методах диагностики и&nbsp;лечения
+                                пациентов с
                                 ожирением;
 
                             </li>
                             <li>
                                 формирование профессиональных навыков разработки междисциплинарного скоординированного
-                                плана ведения и лечения пациентов, подбор оптимальной терапии пациентов с заболеваниями
-                                и патологиями эндокринной системы, способствующих формированию ожирения.
+                                плана ведения и&nbsp;лечения пациентов, подбор оптимальной терапии пациентов
+                                с&nbsp;заболеваниями
+                                и&nbsp;патологиями эндокринной системы, способствующих формированию ожирения.
 
 
                             </li>
                         </ul>
-                      
+
 
                     </div>
                 </div>
@@ -2171,176 +2187,53 @@
 
                                 <div class="slider-single">
                                     <img class="slider-single-image"
-                                        src="https://1med.tv/upload/iblock/717/p86zbhyucuqaxd201637k2y6eunitx48/zavaliy_sq.webp"
-                                        alt="Завалий" />
+                                        src="/upload/iblock/990/b9eqshjbshbzfkj70c4m6yuydpl0ck82/fadeev.webp"
+                                        alt="Фадеев" />
                                     <div class="slider-single-title slider-single-main">
-                                        <span class="slider-single-main-big">Завалий</span> Леся Богдановна
+                                        <span class="slider-single-main-big">Фадеев</span> Валентин Викторович
 
                                     </div>
                                     <div class="slider-single-title slider-single-text">
 
-                                        к.м.н., врач-невролог, старший научный сотрудник отделения неотложной неврологии
-                                        и&nbsp;восстановительного лечения ГБУЗ «Научно-исследовательского института
-                                        скорой
-                                        помощи им.&nbsp;Н.В.&nbsp;Склифосовского Департамента здравоохранения
-                                        г.&nbsp;Москвы»
+                                        профессор, д.м.н., член-корреспондент Российской Академии Наук, директор клиники
+                                        эндокринологии Первого МГМУ им.&nbsp;И.М.&nbsp;Сеченова, врач-эндокринолог
 
                                     </div>
                                 </div>
 
                                 <div class="slider-single">
                                     <img class="slider-single-image"
-                                        src="https://1med.tv/upload/iblock/327/44fyd7l231955l1gd6mslqdw0am750fx/SinkinMV.webp"
-                                        alt="Синкин" />
+                                        src="/upload/iblock/d59/17lrm0ig6578g2l2v30lxrg54nns8ma2/BerkovskayaMA_sq.webp"
+                                        alt="Берковская" />
                                     <div class="slider-single-title slider-single-main">
-                                        <span class="slider-single-main-big">Синкин</span> Михаил Владимирович
+                                        <span class="slider-single-main-big">Берковская</span> Марина Ароновна
 
                                     </div>
                                     <div class="slider-single-title slider-single-text">
 
-                                        д.м.н., врач-невролог, врач функциональной диагностики, ведущий научный
-                                        сотрудник ГБУЗ «Научно-исследовательского института скорой помощи
-                                        им.&nbsp;Н.В.&nbsp;Склифосовского Департамента здравоохранения г.&nbsp;Москвы»
-
+                                        к.м.н., доцент кафедры эндокринологии Первого МГМУ им.&nbsp;И.М.&nbsp;Сеченова,
+                                        врач-эндокринолог, диетолог
 
                                     </div>
                                 </div>
                                 <div class="slider-single">
                                     <img class="slider-single-image"
-                                        src="https://1med.tv/upload/medialibrary/711/18wd1o3exr6p1gvhh62ueks47bqnfcnt/polunina_sq.webp"
-                                        alt="Полунина" />
+                                        src="/upload/iblock/47f/0rw7o7mdue9g37fi1zpcsoq69la71k60/GurovaOYu.webp"
+                                        alt="Гурова" />
                                     <div class="slider-single-title slider-single-main">
                                         <span class="slider-single-main-big">
-                                            Полунина </span> Наталья Алексеевна
+                                            Гурова </span> Олеся Юрьевна
 
 
                                     </div>
                                     <div class="slider-single-title slider-single-text">
 
-                                        к.м.н., врач-нейрохирург, доцент кафедры фундаментальной нейрохирургии ФДПО
-                                        РНИМУ им.&nbsp;Н.И.&nbsp;Пирогова, научный сотрудник нейрохирургического
-                                        отделения ГБУЗ
-                                        «Научно-исследовательского института скорой помощи
-                                        им.&nbsp;Н.В.&nbsp;Склифосовского
-                                        Департамента здравоохранения г.&nbsp;Москвы»
-
-                                    </div>
-                                </div>
-                                <div class="slider-single">
-                                    <img class="slider-single-image"
-                                        src="https://1med.tv/upload/medialibrary/b52/k87dei00ug1yj51fvicb0hw10ivbrfbf/salihov_sq.webp"
-                                        alt="Салихов" />
-                                    <div class="slider-single-title slider-single-main">
-                                        <span class="slider-single-main-big">
-                                            Салихов </span> Камиль Саламович
-
-
-                                    </div>
-                                    <div class="slider-single-title slider-single-text">
-
-                                        к.м.н., врач челюстно-лицевой, пластический хирург отделения челюстно-лицевой
-                                        хирургии ФГБУ НМИЦ «Центральный научно-исследовательский институт стоматологии
-                                        и&nbsp;челюстно-лицевой хирургии» Министерства здравоохранения Российской
-                                        Федерации
-
-
-                                    </div>
-                                </div>
-                                <div class="slider-single">
-                                    <img class="slider-single-image"
-                                        src="https://1med.tv/upload/medialibrary/590/zhreexvvzrh2mhigdpm2xpigb1p0os7k/kutrovskaya_sq.webp"
-                                        alt="Кутровская" />
-                                    <div class="slider-single-title slider-single-main">
-                                        <span class="slider-single-main-big">
-
-                                            Кутровская
-
-                                        </span> Наталья Юрьевна
-                                    </div>
-                                    <div class="slider-single-title slider-single-text">
-                                        к.м.н., врач-офтальмолог, доцент кафедры глазных болезней ФГБОУ ВО «Московского
-                                        государственного медико-стоматологического университета
-                                        им.&nbsp;А.И.&nbsp;Евдокимова» МЗ&nbsp;РФ
-                                    </div>
-                                </div>
-
-                                <div class="slider-single">
-                                    <img class="slider-single-image"
-                                        src="https://1med.tv/upload/medialibrary/7f7/h02j47ie74f9787dlkxiv3vdvyiflmrx/neznanova_sq.webp"
-                                        alt="Незнанова" />
-                                    <div class="slider-single-title slider-single-main">
-                                        <span class="slider-single-main-big">Незнанова</span>
-                                        Мария Викторовна
-
-                                    </div>
-                                    <div class="slider-single-title slider-single-text">
-                                        врач-рентгенолог, ГБУЗ «Научно-исследовательского института скорой помощи
-                                        им.&nbsp;Н.В.&nbsp;Склифосовского Департамента здравоохранения г.&nbsp;Москвы»
-                                    </div>
-                                </div>
-
-                                <div class="slider-single">
-                                    <img class="slider-single-image"
-                                        src="https://1med.tv/upload/medialibrary/3b2/mqks832estp7dmpwdito13dbgnc6j595/seliverstovaEG_sq.webp"
-                                        alt="Селиверстова" />
-                                    <div class="slider-single-title slider-single-main">
-                                        <span class="slider-single-main-big">Селиверстова</span>
-                                        Екатерина Геннадьевна
-                                    </div>
-                                    <div class="slider-single-title slider-single-text">
-                                        врач функциональной диагностики, младший научный сотрудник нейрохирургического
-                                        отделения ГБУЗ «Научно-исследовательского института скорой помощи
-                                        им.&nbsp;Н.В.&nbsp;Склифосовского Департамента здравоохранения г.&nbsp;Москвы»
+                                        к.м.н., доцент кафедры эндокринологии Первого МГМУ им.&nbsp;И.М.&nbsp;Сеченова,
+                                        врач-эндокринолог
 
                                     </div>
                                 </div>
 
-                                <div class="slider-single">
-                                    <img class="slider-single-image"
-                                        src="https://1med.tv/upload/medialibrary/393/0avkxo1g2bnmvwgwth4rfkovd2d4v5tv/roshina_sq.webp"
-                                        alt="Рощина" />
-                                    <div class="slider-single-title slider-single-main">
-                                        <span class="slider-single-main-big">Рощина</span>
-                                        Дарья Викторовна
-                                    </div>
-                                    <div class="slider-single-title slider-single-text">
-                                        врач оториноларинголог ГБУЗ «Научно-исследовательского института скорой помощи
-                                        им.&nbsp;Н.В.&nbsp;Склифосовского Департамента здравоохранения г.&nbsp;Москвы»
-                                    </div>
-                                </div>
-
-                                <div class="slider-single">
-                                    <img class="slider-single-image"
-                                        src="https://1med.tv/upload/medialibrary/f32/cocih1099tc98pdo40n0osmcr5sh4s1v/rahmanina_sq.webp"
-                                        alt="Рахманина" />
-                                    <div class="slider-single-title slider-single-main">
-                                        <span class="slider-single-main-big">Рахманина</span>
-                                        Анастасия Алексеевна
-
-                                    </div>
-                                    <div class="slider-single-title slider-single-text">
-
-                                        медицинский психолог ГБУЗ «Научно-исследовательского института скорой помощи
-                                        им.&nbsp;Н.В.&nbsp;Склифосовского Департамента здравоохранения г.&nbsp;Москвы»
-
-                                    </div>
-                                </div>
-
-                                <div class="slider-single">
-                                    <img class="slider-single-image"
-                                        src="https://1med.tv/upload/medialibrary/ecf/cpw5ffvcqyf5w0nyr23u5pq3x1da03lr/chehonackaya_sq.webp"
-                                        alt="Чехонацкая" />
-                                    <div class="slider-single-title slider-single-main">
-                                        <span class="slider-single-main-big">Чехонацкая</span>
-                                        Карина Игоревна
-
-                                    </div>
-                                    <div class="slider-single-title slider-single-text">
-
-                                        врач-невролог АО «Ильинская больница»
-
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -2371,96 +2264,68 @@
                     <div class="article__main-container">
                         <div class="article__list">
                             <div class="article__list-left">
-                                МОДУЛЬ 1.<br>«Современные подходы к&nbsp;диагностике и&nbsp;лечению пациентов
-                                с&nbsp;нейропатией лицевого нерва: теоретические основы» (Заочный)
+                                МОДУЛЬ 1.<br> Ожирение: общие вопросы
                             </div>
                             <div class="article__list-right">
                                 <ul class="article__list-ul">
                                     <li class="article__list-li">
                                         <div class="article__list-bullet"></div>
                                         <div class="article__list-text">
-                                            Нейропатия лицевого нерва
+                                            Патогенез ожирения: теории и&nbsp;версии
                                         </div>
                                     </li>
                                     <li class="article__list-li">
                                         <div class="article__list-bullet"></div>
                                         <div class="article__list-text">
-                                            Электродиагностика при&nbsp;поражении периферической нервной системы
+                                            Ожирение и социум (социальная и&nbsp;медицинская значимость, коморбидность,
+                                            распространенность, проблемы оказания медицинской помощи)
+
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="article__list">
+                            <div class="article__list-left">
+                                МОДУЛЬ 2.<br>Диагностика ожирения
+                            </div>
+                            <div class="article__list-right">
+                                <ul class="article__list-ul">
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Ограничения традиционных методов диагностики ожирения (критерии постановки
+                                            диагноза, ограничения ИМТ, оценка метаболизма и&nbsp;состава тела), новая
+                                            классификация, проблемы диф диагностики
 
                                         </div>
                                     </li>
                                     <li class="article__list-li">
                                         <div class="article__list-bullet"></div>
                                         <div class="article__list-text">
-                                            Стимуляционная и&nbsp;игольчатая миография в&nbsp;диагностике нейропатии
-                                            лицевого нерва
-                                        </div>
-                                    </li>
-                                    <li class="article__list-li">
-                                        <div class="article__list-bullet"></div>
-                                        <div class="article__list-text">
-                                            Нейровизуализация при&nbsp;нейропатии лицевого нерва
-                                        </div>
-                                    </li>
-                                    <li class="article__list-li">
-                                        <div class="article__list-bullet"></div>
-                                        <div class="article__list-text">
-                                            Роль оториноларинголога в&nbsp;диагностике и&nbsp;лечении пациентов
-                                            с&nbsp;поражением лицевого нерва
-                                        </div>
-                                    </li>
-                                    <li class="article__list-li">
-                                        <div class="article__list-bullet"></div>
-                                        <div class="article__list-text">
-                                            Основные подходы к&nbsp;лечению нейропатии лицевого нерва
-                                        </div>
-                                    </li>
-                                    <li class="article__list-li">
-                                        <div class="article__list-bullet"></div>
-                                        <div class="article__list-text">
-                                            Проблема диагностики и&nbsp;лечения синкинезий
+                                            Соматический статус пациента: план обследования (лабораторный чек/лист
+                                            по&nbsp;клин рекомендациям, необоснованные обследования)
 
                                         </div>
                                     </li>
                                     <li class="article__list-li">
                                         <div class="article__list-bullet"></div>
                                         <div class="article__list-text">
-                                            Диагностика и&nbsp;лечение лагофтальма
-
+                                            Психо-эмоциональный статус пациента: методы диагностики (опросники, критерии
+                                            РПП)
                                         </div>
                                     </li>
                                     <li class="article__list-li">
                                         <div class="article__list-bullet"></div>
                                         <div class="article__list-text">
-                                            Психологическая помощь пациентам с&nbsp;нейропатией лицевого нерва
-
+                                            Психологические причины ожирения
                                         </div>
                                     </li>
                                     <li class="article__list-li">
                                         <div class="article__list-bullet"></div>
                                         <div class="article__list-text">
-                                            Ботулинотерапия при&nbsp;поражении лицевого нерва
-
-                                        </div>
-                                    </li>
-                                    <li class="article__list-li">
-                                        <div class="article__list-bullet"></div>
-                                        <div class="article__list-text">
-                                            Хирургическое лечение нейропатии лицевого нерва в&nbsp;остром периоде
-
-                                        </div>
-                                    </li>
-                                    <li class="article__list-li">
-                                        <div class="article__list-bullet"></div>
-                                        <div class="article__list-text">
-                                            Хирургическое лечение нейропатии лицевого нерва в&nbsp;хроническом периоде
-
-                                        </div>
-                                    </li>
-                                    <li class="article__list-li">
-                                        <div class="article__list-bullet"></div>
-                                        <div class="article__list-text">
-                                            Итого
+                                            Диагностика нарушений пищевого поведения и&nbsp;РПП, психологический портрет
 
                                         </div>
                                     </li>
@@ -2469,43 +2334,45 @@
                         </div>
                         <div class="article__list">
                             <div class="article__list-left">
-                                МОДУЛЬ 2.<br>«Инъекции ботулинического токсина типа&nbsp;А при&nbsp;нейропатии лицевого
-                                нерва с&nbsp;отработкой практических навыков» (Очный)
+                                МОДУЛЬ 3.<br>Современные методы лечения
                             </div>
                             <div class="article__list-right">
                                 <ul class="article__list-ul">
                                     <li class="article__list-li">
                                         <div class="article__list-bullet"></div>
                                         <div class="article__list-text">
-                                            Анатомия мышц лица
-                                        </div>
-                                    </li>
-                                    <li class="article__list-li">
-                                        <div class="article__list-bullet"></div>
-                                        <div class="article__list-text">
-                                            Клиническая диагностика при&nbsp;нейропатии лицевого нерва: демонстрация
-                                            пациента
+                                            Современные принципы лечения ожирения (цели, ключевые стратегии,
+                                            комплексный подход, система наблюдения и&nbsp;план консультаций, алгоритм
+                                            лечения, структура модификации образа жизни (еда/сон/физ. активность))
 
                                         </div>
                                     </li>
                                     <li class="article__list-li">
                                         <div class="article__list-bullet"></div>
                                         <div class="article__list-text">
-                                            Показания и&nbsp;техника инъекций ботулинического токсина типа&nbsp;А
-                                            в&nbsp;мышцы лица
+                                            Стратегии диетологического консультирования (диетологические причины
+                                            ожирения, принципы составления рациона и&nbsp;план долговременного
+                                            сопровождения)
+
                                         </div>
                                     </li>
                                     <li class="article__list-li">
                                         <div class="article__list-bullet"></div>
                                         <div class="article__list-text">
-                                            Физическая реабилитация пациента с&nbsp;нейропатией лицевого нерва:
-                                            методология восстановительного обучения
+                                            Основные принципы поведенческой терапии (принципы поведенческой терапии,
+                                            тактика работы с&nbsp;психологическими триггерами перееданий)
                                         </div>
                                     </li>
                                     <li class="article__list-li">
                                         <div class="article__list-bullet"></div>
                                         <div class="article__list-text">
-                                            Итоговая аттестация
+                                            Фармакотерапия при&nbsp;ожирении: за и&nbsp;против
+                                        </div>
+                                    </li>
+                                    <li class="article__list-li">
+                                        <div class="article__list-bullet"></div>
+                                        <div class="article__list-text">
+                                            Бариатрическая хирургия: за и&nbsp;против
 
                                         </div>
                                     </li>
@@ -2521,7 +2388,7 @@
                 <div class="article__anons2-container">
                     <div class="article__anons2-left">
                         <img class="article__anons2-img"
-                            src="https://1med.tv/upload/medialibrary/305/80pvctdghyvwv0drn1bg7qs62bjqgw2a/screen3.webp"
+                            src="/upload/medialibrary/305/80pvctdghyvwv0drn1bg7qs62bjqgw2a/screen3.webp"
                             alt="ноутбук">
                     </div>
                     <div class="article__anons2-right">
@@ -2533,7 +2400,7 @@
                         </p>
                         <!-- КНОПКА2 -->
                         <a class="project__btn" target="_blank"
-                            href="https://1med.tv/upload/medialibrary/968/gbw4ry0fp1grw2mnq6p2g1qgphp145bd/Программа%20Ожирение%2018%20час.%20подписана.pdf">
+                            href="/upload/medialibrary/968/gbw4ry0fp1grw2mnq6p2g1qgphp145bd/Программа%20Ожирение%2018%20час.%20подписана.pdf">
                             Скачать PDF
                         </a>
                         <!-- КНОПКА2 -->
@@ -2551,48 +2418,29 @@
                             Результат
                         </h2>
                         <p class="article__text">
-                            В результате обучения слушатели приобретут следующие специальные знания:
+                            Планируемые результаты обучения направлены на&nbsp;совершенствование профессиональных компетенций
+                            врача-эндокринолога, врачей общей практики, терапевтов, психиатров и&nbsp;психотерапевтов,
+                            диетологов и&nbsp;получение специальных знаний в&nbsp;области современных методов лечения пациентов с
+                            ожирением:
+
 
                         </p>
                         <p class="article__text">
-                            — основные клинико-инструментальные диагностические мероприятия у&nbsp;пациентов
-                            с&nbsp;нейропатией лицевого нерва;
-                        </p>
-
-                        <p class="article__text">
-
-                            — определение двигательного паттерна при&nbsp;нейропатии лицевого нерва, выбор тактики
-                            ведения пациента;
-
-                        </p>
-
-                        <p class="article__text">
-                            — интерпретация данных магнитно-резонансной томографии и&nbsp;электродиагностики
-                            у&nbsp;пациентов с&nbsp;нейропатией лицевого нерва;
-
+                            — клиника, диагностика, дифференциальная диагностика пациентов с&nbsp;ожирением;
                         </p>
 
                         <p class="article__text">
 
-                            — проведение дифференциальной диагностики пациентам с&nbsp;поражением лицевого нерва
-                            и&nbsp;верификация диагноза;
+                            — рекомендации по&nbsp;системному лечению заболеваний пациентов с&nbsp;ожирением;
+
                         </p>
 
                         <p class="article__text">
+                            — методы выполнения диагностических и&nbsp;лечебных вмешательств при&nbsp;ожирении и&nbsp;способы
+                            комплексного лечения ожирения с&nbsp;коррекцией поведенческих моделей пациента.
 
-                            — современные консервативные и&nbsp;хирургические методы лечения, применяемые
-                            у&nbsp;пациентов с&nbsp;нейропатией лицевого нерва;
                         </p>
 
-                        <p class="article__text">
-
-                            — ботулинотерапия при&nbsp;поражении лицевого нерва;
-                        </p>
-
-                        <p class="article__text">
-
-                            — оформление медицинской документации пациентам с&nbsp;нейропатией лицевого нерва.
-                        </p>
 
                     </div>
                 </div>
@@ -2633,7 +2481,6 @@
                                             на обучающий цикл программы
                                             на&nbsp;портале
                                             <a target="_blank" href="https://edu.rosminzdrav.ru">edu.rosminzdrav.ru</a>
-                                            (количество мест на&nbsp;курс ограничено)
                                         </p>
                                     </div>
                                 </div>
@@ -2641,11 +2488,10 @@
                             <div class="article__infoblock-line">
                                 <div class="article__infoblock-main">
                                     <div class="article__infoblock-main_header">
-                                        2. Оплатите программу
+                                        2. Свяжитесь с&nbsp;менеджером программы
                                     </div>
                                     <div>
-                                        <p class="article__infoblock-main_text">и получите подтверждения от менеджера
-                                            программы</p>
+                                        <p class="article__infoblock-main_text"> для&nbsp;подтверждения получения заявки и&nbsp;запроса счета на&nbsp;оплату.</p>
                                     </div>
                                 </div>
                             </div>
@@ -2665,7 +2511,7 @@
                             <div class="article__infoblock-line">
                                 <div class="article__infoblock-main">
                                     <div class="article__infoblock-main_header">
-                                        4. Пройдите обучение
+                                        4. Пройдите обучение 
                                     </div>
                                     <div>
                                         <p class="article__infoblock-main_text"> и тестирование, получите удостоверение
@@ -2706,13 +2552,13 @@
                                         <div class="card">
                                             <div class="card__inner">
                                                 <img class="card__image"
-                                                    src="https://1med.tv/upload/medialibrary/cfb/z2g19ww59yxetorli5i9zlaxag9lhv05/doc31.webp"
+                                                    src="/upload/medialibrary/cfb/z2g19ww59yxetorli5i9zlaxag9lhv05/doc31.webp"
                                                     alt="doc" />
-                                                <div class="card__header"> Заявление на&nbsp;зачисление Склиф неврология
+                                                <div class="card__header"> Заявление на зачисление ОЖИРЕНИЕ
                                                 </div>
                                             </div>
                                             <a class="project__carousel-btn" target="_blank"
-                                                href="https://1med.tv/upload/medialibrary/9ee/o0xj9lhwuse501i1pyh37sx6gq0q1qcg/Заявление%20на%20зачисление%20Ожирение.docx">
+                                                href="/upload/medialibrary/9ee/o0xj9lhwuse501i1pyh37sx6gq0q1qcg/Заявление%20на%20зачисление%20Ожирение.docx">
                                                 <span class="project__carousel-btn-span">Скачать DOC</span>
                                             </a>
                                         </div>
@@ -2721,14 +2567,14 @@
                                         <div class="card">
                                             <div class="card__inner">
                                                 <img class="card__image"
-                                                    src="https://1med.tv/upload/medialibrary/58f/jn02j97hhtexlzrewq5z63xg2gcbw1si/doc32.webp"
+                                                    src="/upload/medialibrary/58f/jn02j97hhtexlzrewq5z63xg2gcbw1si/doc32.webp"
                                                     alt="doc" />
                                                 <div class="card__header">
                                                     Необходимые документы для&nbsp;обучения
                                                 </div>
                                             </div>
                                             <a class="project__carousel-btn" target="_blank"
-                                                href="https://1med.tv/upload/medialibrary/da8/d25vw551dykfzvnlaysq2rap6fvajug1/Необходимые%20документы%20для%20обучения.docx">
+                                                href="/upload/medialibrary/da8/d25vw551dykfzvnlaysq2rap6fvajug1/Необходимые%20документы%20для%20обучения.docx">
                                                 <span class="project__carousel-btn-span">Скачать DOC</span>
                                             </a>
                                         </div>
@@ -2738,14 +2584,14 @@
                                         <div class="card">
                                             <div class="card__inner">
                                                 <img class="card__image"
-                                                    src="https://1med.tv/upload/medialibrary/c87/v2kb0ylkyb299swmqzzo17rwh2e5o745/doc33.webp"
+                                                    src="/upload/medialibrary/c87/v2kb0ylkyb299swmqzzo17rwh2e5o745/doc33.webp"
                                                     alt="doc" />
                                                 <div class="card__header">
-                                                    Договор платные обр. услуги РИА&nbsp;МС&nbsp;ФЛ
+                                                    Договор платные обр. услуги РИА&nbsp;МС&nbsp;ФЛ 
                                                 </div>
                                             </div>
                                             <a class="project__carousel-btn" target="_blank"
-                                                href="https://1med.tv/upload/support/ожирение/Договор_платные_обр_услуги_РИА%20МС_ФЛ_2.docx">
+                                                href="/upload/support/ожирение/Договор_платные_обр_услуги_РИА%20МС_ФЛ_2.docx">
                                                 <span class="project__carousel-btn-span">Скачать PDF</span>
                                             </a>
                                         </div>
